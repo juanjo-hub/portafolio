@@ -1,0 +1,174 @@
+html { scroll-behavior: smooth; }
+
+.jj-hobbies {
+  width: 100%;
+  padding: clamp(42px, 5vw, 84px) 0;
+  margin: 0;
+  background: #17110d;
+  overflow: hidden;
+}
+
+.jj-hobby {
+  --jj-bg-x: 50%;
+  --jj-bg-y: 50%;
+  --jj-parallax: 0px;
+  width: min(1180px, calc(100% - 56px));
+  min-height: 420px;
+  margin: 0 auto clamp(36px, 4vw, 64px);
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(208,173,108,.24);
+  box-shadow: 0 18px 55px rgba(0,0,0,.42);
+  background: #1a130f;
+}
+
+.jj-hobby:last-child { margin-bottom: 0; }
+
+/* Rutas definidas aquí para que el navegador las resuelva siempre desde /css. */
+.jj-hobby--1 { --jj-bg: url("../imagenes/hobbies/pelicula.webp"); }
+.jj-hobby--2 { --jj-bg: url("../imagenes/hobbies/videojuegos.webp"); }
+.jj-hobby--3 { --jj-bg: url("../imagenes/hobbies/lectura.webp"); }
+.jj-hobby--4 { --jj-bg: url("../imagenes/hobbies/deporte.webp"); }
+.jj-hobby--5 { --jj-bg: url("../imagenes/hobbies/juegos-de-mesa.webp"); }
+
+/* La imagen ocupa solo su mitad: ya no llena una pantalla completa. */
+.jj-hobby::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 420px;
+  background-image: var(--jj-bg);
+  background-color: #17110d;
+  background-size: auto calc(100% + 70px);
+  background-position: var(--jj-bg-x) calc(var(--jj-bg-y) + var(--jj-parallax));
+  will-change: background-position;
+  background-repeat: no-repeat;
+}
+
+.jj-hobby::after {
+  content: "";
+  grid-column: 1;
+  grid-row: 1;
+  background: linear-gradient(90deg, transparent 62%, rgba(26,19,15,.94) 100%);
+  pointer-events: none;
+}
+
+.jj-hobby--right { grid-template-columns: 1fr 1.35fr; }
+.jj-hobby--right::before { grid-column: 2; }
+.jj-hobby--right::after {
+  grid-column: 2;
+  background: linear-gradient(270deg, transparent 62%, rgba(26,19,15,.94) 100%);
+}
+
+.jj-hobby__overlay { display: none; }
+
+.jj-hobby__content,
+.jj-hobby--right .jj-hobby__content {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  margin: 0;
+  padding: 48px 42px;
+  position: relative;
+  z-index: 2;
+  color: #f2ede3;
+  background: #1a130f;
+  text-align: left;
+  backdrop-filter: none;
+}
+
+.jj-hobby--right .jj-hobby__content { grid-column: 1; }
+
+.jj-hobby__label {
+  margin: 0 0 12px;
+  color: #d0ad6c;
+  font-size: .86rem;
+  letter-spacing: .18em;
+  text-align: left;
+}
+
+.jj-hobby__content h2 {
+  margin: 0 0 18px;
+  font-size: clamp(34px, 3.2vw, 54px);
+  line-height: 1;
+  font-weight: 600;
+  color: #f7f2e9;
+  text-align: left;
+  text-shadow: 0 3px 10px rgba(0,0,0,.55);
+}
+
+.jj-hobby__content p {
+  max-width: 44ch;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.72;
+  color: #ddd4c5;
+  text-align: left;
+  text-shadow: none;
+}
+
+.jj-hobby:nth-child(1) { --jj-bg-x: 50%; --jj-bg-y: 44%; }
+.jj-hobby:nth-child(2) { --jj-bg-x: 50%; --jj-bg-y: 50%; }
+.jj-hobby:nth-child(3) { --jj-bg-x: 50%; --jj-bg-y: 48%; }
+.jj-hobby:nth-child(4) { --jj-bg-x: 50%; --jj-bg-y: 50%; }
+.jj-hobby:nth-child(5) { --jj-bg-x: 50%; --jj-bg-y: 50%; }
+
+@media (max-width: 900px) {
+  .jj-hobby,
+  .jj-hobby--right {
+    width: min(760px, calc(100% - 32px));
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .jj-hobby::before,
+  .jj-hobby--right::before {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 330px;
+  }
+
+  .jj-hobby::after,
+  .jj-hobby--right::after {
+    grid-column: 1;
+    grid-row: 1;
+    background: linear-gradient(180deg, transparent 58%, #1a130f 100%);
+  }
+
+  .jj-hobby__content,
+  .jj-hobby--right .jj-hobby__content {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 28px 26px 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .jj-hobbies { padding: 24px 0 36px; }
+  .jj-hobby,
+  .jj-hobby--right {
+    width: calc(100% - 20px);
+    margin-bottom: 22px;
+  }
+  .jj-hobby::before,
+  .jj-hobby--right::before { min-height: 240px; }
+  .jj-hobby__content,
+  .jj-hobby--right .jj-hobby__content { padding: 22px 18px 26px; }
+  .jj-hobby__content h2 { font-size: clamp(34px, 11vw, 46px); }
+  .jj-hobby__content p { font-size: 15px; line-height: 1.65; }
+}
+
+@media (max-width: 700px) {
+  .jj-hobby::before,
+  .jj-hobby--right::before {
+    background-size: cover;
+    background-position: var(--jj-bg-x) var(--jj-bg-y);
+  }
+}

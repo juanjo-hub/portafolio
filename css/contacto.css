@@ -1,0 +1,556 @@
+/* ============================
+   CONTACTO
+   PLACA MEDIEVAL FANTÁSTICA
+============================ */
+
+
+.contacto-container {
+
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:2rem;
+    box-sizing:border-box;
+
+    background-image: url("../imagenes/contacto.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* ============================
+   PLACA PRINCIPAL
+============================ */
+
+.placa-contacto {
+
+    position:relative;
+    padding:clamp(2rem,4vw,3rem);
+    color:#e8dcc0;
+    background:
+    radial-gradient(
+        circle at 20% 18%,
+        rgba(8, 8, 8, 0.06),
+        transparent 18%
+    ),
+
+    radial-gradient(
+        circle at 80% 30%,
+        rgba(53, 52, 52, 0.04),
+        transparent 18%
+    ),
+
+    radial-gradient(
+        circle at 35% 80%,
+        rgba(97, 95, 95, 0.2),
+        transparent 25%
+    ),
+
+    linear-gradient(
+        145deg,
+        #686159,
+        #3e3a34 35%,
+        #24221f 100%
+    );
+    border-radius:10px;
+
+}
+
+/* ============================
+   CABECERA
+============================ */
+.placa-contacto__header {
+
+    position:relative;
+
+    z-index:1;
+
+    text-align:center;
+
+}
+
+
+.placa-contacto__titulo {
+
+    margin:0;
+    font-family:"Cinzel",serif;
+    font-size:clamp(2rem,4vw,3rem);
+    line-height:1.15;
+    color:#f2e5c4;
+    text-shadow:
+    0 3px 5px rgba(0,0,0,.6);
+
+}
+
+
+.placa-contacto__rol {
+    margin:1rem 0 0;
+    font-size:1.15rem;
+    color:#fcfcfc;
+    font-style:italic;
+}
+
+
+
+/* ============================
+   SEPARADOR ESPADA
+============================ */
+
+.placa-contacto__separador {
+
+    position:relative;
+    z-index:1;
+    width:min(100%,420px);
+    margin:2rem auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:.9rem;
+
+}
+
+
+
+.placa-contacto__separador::before,
+.placa-contacto__separador::after {
+
+    content:"";
+    flex:1;
+    height:1px;
+    background:
+
+    linear-gradient(
+        to right,
+        transparent,
+        rgba(193,154,84,.85)
+    );
+
+}
+
+
+
+.placa-contacto__separador::after {
+
+    background:
+
+    linear-gradient(
+        to left,
+        transparent,
+        rgba(193,154,84,.85)
+    );
+
+}
+
+
+
+.placa-contacto__espada {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    font-size:1.35rem;
+
+
+    color:#d7b46a;
+
+
+    filter:
+
+    drop-shadow(
+        0 2px 2px rgba(0,0,0,.5)
+    );
+
+}
+
+
+
+
+
+/* ============================
+   DATOS
+============================ */
+
+
+.placa-contacto__datos {
+
+    position:relative;
+
+    z-index:1;
+
+
+    margin:0;
+
+
+    display:grid;
+
+
+    gap:1rem;
+
+}
+
+
+
+.placa-contacto__fila {
+
+
+    display:grid;
+
+
+    grid-template-columns:180px 1fr;
+
+
+    gap:1rem;
+
+
+    align-items:center;
+
+
+    padding:1rem 0;
+
+
+    border-bottom:
+
+    1px solid rgba(190,155,90,.15);
+
+}
+
+
+
+.placa-contacto__fila:last-child {
+
+    border-bottom:none;
+
+}
+
+
+
+.placa-contacto__etiqueta {
+
+    margin:0;
+    display:flex;
+    align-items:center;
+    gap:.6rem;
+    font-family:"Cinzel",serif;
+    font-size:1rem;
+    color:#e2e2e2;
+}
+
+
+
+.placa-contacto__etiqueta i {
+
+    width:18px;
+    text-align:center;
+
+}
+
+
+
+.placa-contacto__valor {
+
+
+    margin:0;
+    color:#f1e6c9;
+    font-size:1.1rem;
+
+}
+
+
+
+.placa-contacto__valor a {
+
+
+    color:inherit;
+
+
+    text-decoration:none;
+
+}
+
+
+
+.placa-contacto__valor a:hover {
+
+
+    color:#fff3c8;
+
+
+    text-decoration:underline;
+
+}
+
+
+
+
+
+/* ============================
+   REDES / CONTACTO
+============================ */
+
+
+.placa-contacto__redes {
+
+
+    position:relative;
+
+
+    z-index:1;
+
+
+    display:grid;
+
+
+    grid-template-columns:repeat(4,1fr);
+
+
+    gap:1rem;
+
+
+    width:100%;
+
+}
+
+
+
+.placa-contacto__red {
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    gap:.6rem;
+
+
+    min-height:56px;
+
+
+    padding:.85rem 1rem;
+
+
+    color:#dec691;
+
+
+    text-decoration:none;
+
+
+    font-family:"Cinzel",serif;
+
+
+    font-size:.92rem;
+
+
+    letter-spacing:.03em;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(122,104,75,.20),
+        rgba(36,31,26,.42)
+    );
+
+
+    border:
+
+    1px solid rgba(193,154,84,.42);
+
+
+    clip-path:polygon(
+
+        5% 0,
+        95% 0,
+        100% 25%,
+        100% 75%,
+        95% 100%,
+        5% 100%,
+        0 75%,
+        0 25%
+
+    );
+
+
+    transition:.2s ease;
+
+}
+
+
+
+.placa-contacto__red i {
+
+
+    font-size:1.25rem;
+
+
+    color:#f0d79c;
+
+}
+
+
+
+.placa-contacto__red:hover {
+
+
+    color:#fff0c2;
+
+
+    transform:translateY(-3px);
+
+
+    border-color:#f0d79c;
+
+}
+
+
+
+.placa-contacto__red:hover i {
+
+
+    color:#fff0c2;
+
+}
+
+
+
+
+
+/* ============================
+   TABLET
+============================ */
+
+
+@media(max-width:900px){
+
+
+    .placa-contacto__redes {
+
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+
+}
+
+
+
+
+
+/* ============================
+   MÓVIL
+============================ */
+
+
+@media(max-width:520px){
+
+
+    .contacto-container {
+
+
+        padding:1rem;
+
+    }
+
+
+
+    .placa-contacto {
+
+
+        width:100%;
+
+
+        padding:1.8rem;
+
+    }
+
+
+
+    .placa-contacto__fila {
+
+
+        grid-template-columns:1fr;
+
+
+        gap:.5rem;
+
+    }
+
+
+
+    .placa-contacto__redes {
+
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .placa-contacto__red {
+
+
+        min-height:52px;
+
+    }
+
+
+}
+
+/* ============================
+   CRÉDITOS VISUALES
+============================ */
+.creditos-visuales {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 520px);
+    margin: 1.35rem auto 0;
+    padding-top: .75rem;
+    border-top: 1px solid rgba(190,155,90,.14);
+    color: rgba(242,229,196,.72);
+    font-size: .82rem;
+    line-height: 1.55;
+}
+
+.creditos-visuales summary {
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+    list-style: none;
+    font-family: "Cinzel", serif;
+    font-size: .76rem;
+    letter-spacing: .08em;
+    color: rgba(215,180,106,.78);
+    transition: color .2s ease;
+}
+
+.creditos-visuales summary::-webkit-details-marker { display: none; }
+.creditos-visuales summary::before {
+    content: "＋";
+    display: inline-block;
+    margin-right: .45rem;
+    font-family: system-ui, sans-serif;
+}
+.creditos-visuales[open] summary::before { content: "−"; }
+.creditos-visuales summary:hover,
+.creditos-visuales summary:focus-visible { color: #f2e5c4; }
+.creditos-visuales summary:focus-visible {
+    outline: 1px solid rgba(215,180,106,.65);
+    outline-offset: 4px;
+}
+.creditos-visuales p {
+    margin: .75rem auto 0;
+    max-width: 48ch;
+    text-align: center;
+}

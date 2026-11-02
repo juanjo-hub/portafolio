@@ -1,0 +1,45 @@
+<div class="mapa-container" id="mapa" role="group" aria-label="Mapa del reino: selecciona una ciudad para navegar a esa sección">
+
+    <h1 class="sr-only">Mapa del reino</h1>
+
+    <div class="mapa-lienzo">
+
+        <button type="button" class="map-point" id="p-juanjo"><span class="map-point__flecha" aria-hidden="true">➼</span>Juanjo</button>
+        <button type="button" class="map-point" id="p-sobremi"><span class="map-point__flecha" aria-hidden="true">➼</span>Sobre mi</button>
+        <button type="button" class="map-point" id="p-educacion"><span class="map-point__flecha" aria-hidden="true">➼</span>Educación</button>
+        <button type="button" class="map-point" id="p-portfolio"><span class="map-point__flecha" aria-hidden="true">➼</span>Portafolio</button>
+        <button type="button" class="map-point" id="p-skills"><span class="map-point__flecha" aria-hidden="true">➼</span>Skills</button>
+        <button type="button" class="map-point" id="p-hobbies"><span class="map-point__flecha" aria-hidden="true">➼</span>Hobbies</button>
+        <button type="button" class="map-point" id="p-contacto"><span class="map-point__flecha" aria-hidden="true">➼</span>Contacto</button>
+
+    </div>
+
+    <!--
+      Lista independiente solo para móvil (ver mapa.css):
+      en una pantalla estrecha el mapa panorámico deja
+      franjas negras enormes, así que ahí se muestra esto
+      en su lugar en vez de los puntos de arriba.
+    -->
+    <div class="mapa-lista-movil">
+
+        <button type="button" class="map-point" data-destino="juanjo"><span class="map-point__flecha" aria-hidden="true">➼</span>Juanjo</button>
+        <button type="button" class="map-point" data-destino="sobremi"><span class="map-point__flecha" aria-hidden="true">➼</span>Sobre mi</button>
+        <button type="button" class="map-point" data-destino="educacion"><span class="map-point__flecha" aria-hidden="true">➼</span>Educación</button>
+        <button type="button" class="map-point" data-destino="portfolio"><span class="map-point__flecha" aria-hidden="true">➼</span>Portafolio</button>
+        <button type="button" class="map-point" data-destino="skills"><span class="map-point__flecha" aria-hidden="true">➼</span>Skills</button>
+        <button type="button" class="map-point" data-destino="hobbies"><span class="map-point__flecha" aria-hidden="true">➼</span>Hobbies</button>
+        <button type="button" class="map-point" data-destino="contacto"><span class="map-point__flecha" aria-hidden="true">➼</span>Contacto</button>
+
+    </div>
+
+
+<div class="mapa-movil" aria-label="Ruta del reino">
+  <button type="button" class="mapa-movil__parada parada--inicio" data-destino="juanjo"><span>Inicio</span></button>
+  <button type="button" class="mapa-movil__parada parada--sobremi" data-destino="sobremi"><span>Sobre mí</span></button>
+  <button type="button" class="mapa-movil__parada parada--formacion" data-destino="educacion"><span>Formación</span></button>
+  <button type="button" class="mapa-movil__parada parada--proyectos" data-destino="portfolio"><span>Proyectos</span></button>
+  <button type="button" class="mapa-movil__parada parada--skills" data-destino="skills"><span>Skills</span></button>
+  <button type="button" class="mapa-movil__parada parada--hobbies" data-destino="hobbies"><span>Hobbies</span></button>
+  <button type="button" class="mapa-movil__parada parada--contacto" data-destino="contacto"><span>Contacto</span></button>
+</div>
+</div>

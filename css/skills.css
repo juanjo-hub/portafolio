@@ -1,0 +1,335 @@
+/* ============================
+   HABILIDADES RPG
+============================ */
+
+
+.habilidades {
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:3rem 5%;
+
+    box-sizing:border-box;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.65)
+    ),
+
+    url("../imagenes/skills.webp");
+
+    background-size:cover;
+
+    background-position:center;
+
+    color:#ead9ad;
+
+}
+
+
+
+/* CABECERA */
+
+.habilidades__header {
+
+    text-align:center;
+
+    margin-bottom:3rem;
+
+}
+
+
+
+.habilidades__header h1 {
+
+    font-family:"Cinzel",serif;
+
+    font-size:clamp(2rem,5vw,3rem);
+
+    margin:0;
+
+    color:#f5dc98;
+
+}
+
+
+
+.habilidades__header p {
+
+    font-style:italic;
+
+    color:#cdb887;
+
+}
+
+
+
+
+
+/* LISTA */
+
+.habilidades__lista {
+
+    max-width:1000px;
+
+    margin:auto;
+
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:2rem;
+
+}
+
+
+
+
+
+/* CARTA HABILIDAD */
+
+
+.habilidad {
+
+    display:flex;
+
+    gap:1.5rem;
+
+    padding:1.5rem;
+
+
+    background:
+
+    linear-gradient(
+        145deg,
+        rgba(65,48,32,.9),
+        rgba(25,19,14,.95)
+    );
+
+
+    border:
+
+    1px solid rgba(194,150,70,.5);
+
+
+    box-shadow:
+
+    0 15px 30px rgba(0,0,0,.5),
+
+    inset 0 0 30px rgba(0,0,0,.5);
+
+
+}
+
+
+
+
+
+/* ICONO */
+
+
+.habilidad__icono {
+
+
+    width:70px;
+
+    height:70px;
+
+
+    flex-shrink:0;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:50%;
+
+
+    background:#241b13;
+
+
+    border:
+
+    2px solid #b88b3a;
+
+
+}
+
+
+
+.habilidad__icono i {
+
+    font-size:2rem;
+
+    color:#e4bd63;
+
+}
+
+
+.habilidad__icono svg {
+
+    width:2rem;
+
+    height:2rem;
+
+}
+
+
+
+
+
+/* CONTENIDO */
+
+
+.habilidad h2 {
+
+    margin:0 0 .5rem;
+
+    font-family:"Cinzel",serif;
+
+    color:#f2d58a;
+
+}
+
+
+
+.habilidad strong {
+
+    display:block;
+
+    margin-top:.7rem;
+
+
+    font-family:"Cinzel",serif;
+
+    color:#d4aa55;
+
+}
+
+
+
+.habilidad p {
+
+    margin:.5rem 0 0;
+
+    color:#cdbd99;
+
+    font-size:.9rem;
+
+    line-height:1.5;
+
+}
+
+
+
+
+
+/* GEMAS */
+
+
+.habilidad__nivel {
+
+    display:flex;
+
+    gap:.4rem;
+
+}
+
+
+
+.gema {
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+
+    background:#211a12;
+
+
+    border:
+
+    2px solid #80602b;
+
+
+}
+
+
+
+.gema.activa {
+
+    background:
+
+    radial-gradient(
+        circle at 35% 35%,
+        #fff0ad,
+        #c18b2e
+    );
+
+
+    box-shadow:
+
+    0 0 8px rgba(218,170,70,.7);
+
+}
+
+
+
+/* COLOR ORIGINAL POR TECNOLOGÍA */
+
+.habilidad--html      .habilidad__icono i   { color:#e34f26; }
+.habilidad--css       .habilidad__icono i   { color:#1572b6; }
+.habilidad--js        .habilidad__icono i   { color:#f7df1e; }
+.habilidad--php       .habilidad__icono i   { color:#777bb4; }
+.habilidad--wordpress .habilidad__icono i   { color:#21759b; }
+.habilidad--github    .habilidad__icono i   { color:#ffffff; }
+.habilidad--mongodb   .habilidad__icono svg { fill:#47a248; }
+.habilidad--angular   .habilidad__icono i   { color:#dd0031; }
+
+
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:800px){
+
+
+    .habilidades__lista {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+}
+
+
+
+@media(max-width:500px){
+
+
+    .habilidad {
+
+        flex-direction:column;
+
+        text-align:center;
+
+        align-items:center;
+
+    }
+
+
+}

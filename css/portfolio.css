@@ -1,0 +1,746 @@
+/* ============================
+   PORTAFOLIO
+============================ */
+
+.portafolio {
+    width:100%;
+    min-height:100vh;
+    padding:4rem 4%;
+    box-sizing:border-box;
+    overflow:visible;
+
+    background:url("../imagenes/portafolio.webp");
+    background-size:cover;
+    background-position:center;
+}
+
+.portafolio-cabecera {
+    text-align:center;
+    margin-bottom:2rem;
+}
+
+.portafolio-cabecera h1 {
+    margin:0;
+    font-family:"Cinzel",serif;
+    color:#e8cb82;
+    font-size:clamp(2rem,4vw,3rem);
+    text-shadow:0 4px 10px #000;
+}
+
+
+/* ============================
+   REJILLA
+============================ */
+
+.tarjetas {
+    max-width:1300px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-auto-rows:auto;
+    align-items:stretch;
+    gap:1.5rem;
+}
+
+
+/* ============================
+   TARJETA
+============================ */
+
+.tarjeta {
+    --empresa:#b58a42;
+
+    position:relative;
+    min-width:0;
+    padding:4px;
+    border-radius:10px;
+    background:transparent;
+    overflow:hidden;
+    transition:transform .3s;
+}
+
+.tarjeta:hover {
+    transform:translateY(-4px);
+}
+
+
+/* ============================
+   ENLACE DE TARJETA COMPLETA
+============================ */
+
+.tarjeta__enlace-completo {
+    position:absolute;
+    inset:0;
+    /*
+     * Por encima de .contenido-tarjeta (z-index:2) para que
+     * clicar en cualquier parte de la tarjeta funcione — antes
+     * .contenido-tarjeta (sólido, cubre toda la tarjeta) estaba
+     * por encima y bloqueaba todos los clics excepto el propio
+     * botón "Ver más" (z-index:4, sigue prioritario y funciona
+     * de forma independiente).
+     */
+    z-index:3;
+}
+
+
+/* ============================
+   COLORES POR EMPRESA
+============================ */
+
+.tarjeta--rentacar     { --empresa:#008c45; }
+.tarjeta--carpa         { --empresa:#8b4513; }
+.tarjeta--torreblanca   { --empresa:#0057a8; }
+.tarjeta--poveda        { --empresa:#004aad; }
+.tarjeta--agujetas      { --empresa:#e83e8c; }
+.tarjeta--garval        { --empresa:#777777; }
+
+
+/* ============================
+   CONTENIDO
+============================ */
+
+.contenido-tarjeta {
+    position:relative;
+    z-index:2;
+
+    height:100%;
+    padding:1.4rem;
+    box-sizing:border-box;
+    overflow-y:auto;
+
+    display:flex;
+    flex-direction:column;
+    gap:.9rem;
+
+    border:1px solid rgba(181,138,66,.25);
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(45,30,18,.95),
+        rgba(10,7,5,.98)
+    );
+
+    color:white;
+}
+
+
+/* ============================
+   IMAGEN DEL PROYECTO
+============================ */
+
+.imagen-proyecto {
+    width:100%;
+    aspect-ratio:1275/744;
+    height:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:5px;
+    background:transparent;
+}
+
+.imagen-proyecto img {
+    width:100% !important;
+    height:100% !important;
+    object-fit:fill;
+    display:block !important;
+
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:4px;
+}
+
+
+/* ============================
+   SELLO / LOGO
+============================ */
+
+.sello {
+    position:relative;
+    z-index:3;
+
+    width:56px;
+    height:56px;
+    margin-top:-28px;
+    margin-left:1rem;
+
+    border-radius:50%;
+    background:#0c0a08;
+    border:2px solid var(--empresa);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 8px 16px rgba(0,0,0,.5);
+}
+
+.sello img {
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    padding:4px;
+    border-radius:50%;
+    box-sizing:border-box;
+}
+
+
+/* ============================
+   TEXTO
+============================ */
+
+.tarjeta h2 {
+    margin:0;
+    font-family:"Cinzel",serif;
+    color:#e9cd85;
+    font-size:1.15rem;
+    text-transform:none;
+}
+
+.tarjeta p {
+    margin:0;
+    color:#ddd;
+    font-size:.9rem;
+    line-height:1.6;
+    text-transform:none;
+}
+
+
+/* ============================
+   BOTÓN "VER PROYECTO" / "VISITAR PROYECTO"
+============================ */
+
+.boton-proyecto {
+    position:relative;
+    z-index:4;
+
+    align-self:center;
+    margin-top:auto;
+
+    padding:.7rem 1.8rem;
+
+    background:transparent;
+    border:1px solid #b58a42;
+    border-radius:5px;
+
+    color:#f1f1f1;
+    text-decoration:none;
+    text-transform:none;
+    font-size:.85rem;
+    letter-spacing:.02em;
+
+    transition:background .25s,color .25s;
+}
+
+.boton-proyecto:hover {
+    background:#b58a42;
+    color:#fff;
+}
+
+
+/* ============================
+   MODAL "VER MÁS"
+============================ */
+
+.tarjeta__modal {
+    position:fixed;
+    inset:0;
+    z-index:100;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:3rem;
+    box-sizing:border-box;
+
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .25s;
+}
+
+.tarjeta__modal:target {
+    opacity:1;
+    visibility:visible;
+}
+
+.tarjeta__modal-fondo {
+    position:absolute;
+    inset:0;
+    z-index:0;
+
+    background:rgba(0,0,0,.8);
+}
+
+.tarjeta__modal-caja {
+    position:relative;
+    z-index:1;
+
+    width:100%;
+    max-width:720px;
+    /* Nunca puede superar el hueco real disponible dentro del padding del overlay (3rem arriba + 3rem abajo) */
+    max-height:calc(100vh - 6rem);
+    overflow-y:auto;
+
+    padding:2rem 2rem 3rem;
+    box-sizing:border-box;
+
+    border:1px solid rgba(181,138,66,.4);
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(45,30,18,.98),
+        rgba(10,7,5,.99)
+    );
+
+    color:white;
+}
+
+.tarjeta__modal-caja h2 {
+    margin:1.4rem 0 1.1rem;
+    font-family:"Cinzel",serif;
+    color:#e9cd85;
+    font-size:1.5rem;
+    text-align:center;
+    text-transform:none;
+}
+
+.tarjeta__modal-caja p {
+    margin:0 0 1.8rem;
+    color:#ddd;
+    font-size:.95rem;
+    line-height:1.7;
+    text-align:center;
+    text-transform:none;
+}
+
+.tarjeta__modal-caja .boton-proyecto {
+    display:block;
+    width:fit-content;
+    margin:0 auto;
+}
+
+.tarjeta__modal-cerrar {
+    position:absolute;
+    top:.8rem;
+    right:.8rem;
+    z-index:6;
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    border:2px solid #e9cd85;
+    background:#1a120a;
+    box-shadow:0 3px 10px rgba(0,0,0,.6);
+
+    color:#e9cd85;
+    text-decoration:none;
+    font-size:1.5rem;
+    line-height:1;
+
+    transition:background .25s,color .25s,transform .2s;
+}
+
+.tarjeta__modal-cerrar:hover {
+    background:#b58a42;
+    color:#fff;
+    transform:scale(1.08);
+}
+
+
+/* ============================
+   CARRUSEL DE IMÁGENES (hasta 3)
+============================ */
+
+.carrusel {
+    position:relative;
+
+    width:100%;
+    aspect-ratio:1275/744;
+
+    border-radius:6px;
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,.25);
+}
+
+.carrusel__radio {
+    /* oculto visualmente pero accesible al foco de teclado */
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+}
+
+.carrusel__pista {
+    display:flex;
+    width:300%;
+    height:100%;
+
+    transition:transform .4s ease;
+}
+
+.carrusel__diapositiva {
+    width:33.3333%;
+    height:100%;
+    margin:0;
+
+    flex-shrink:0;
+}
+
+.carrusel__diapositiva img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+#rentacar-s1:checked      ~ .carrusel__pista,
+#carpa-s1:checked         ~ .carrusel__pista,
+#torreblanca-s1:checked   ~ .carrusel__pista,
+#poveda-s1:checked        ~ .carrusel__pista,
+#agujetas-s1:checked      ~ .carrusel__pista,
+#garval-s1:checked        ~ .carrusel__pista {
+    transform:translateX(0%);
+}
+
+#rentacar-s2:checked      ~ .carrusel__pista,
+#carpa-s2:checked         ~ .carrusel__pista,
+#torreblanca-s2:checked   ~ .carrusel__pista,
+#poveda-s2:checked        ~ .carrusel__pista,
+#agujetas-s2:checked      ~ .carrusel__pista,
+#garval-s2:checked        ~ .carrusel__pista {
+    transform:translateX(-33.3333%);
+}
+
+#rentacar-s3:checked      ~ .carrusel__pista,
+#carpa-s3:checked         ~ .carrusel__pista,
+#torreblanca-s3:checked   ~ .carrusel__pista,
+#poveda-s3:checked        ~ .carrusel__pista,
+#agujetas-s3:checked      ~ .carrusel__pista,
+#garval-s3:checked        ~ .carrusel__pista {
+    transform:translateX(-66.6666%);
+}
+
+
+/* --- FLECHAS --- */
+
+.carrusel__flechas {
+    display:none;
+
+    position:absolute;
+    inset:0;
+    z-index:2;
+
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 .6rem;
+    box-sizing:border-box;
+
+    pointer-events:none;
+}
+
+#rentacar-s1:checked ~ .carrusel__flechas--s1,
+#rentacar-s2:checked ~ .carrusel__flechas--s2,
+#rentacar-s3:checked ~ .carrusel__flechas--s3,
+#carpa-s1:checked ~ .carrusel__flechas--s1,
+#carpa-s2:checked ~ .carrusel__flechas--s2,
+#carpa-s3:checked ~ .carrusel__flechas--s3,
+#torreblanca-s1:checked ~ .carrusel__flechas--s1,
+#torreblanca-s2:checked ~ .carrusel__flechas--s2,
+#torreblanca-s3:checked ~ .carrusel__flechas--s3,
+#poveda-s1:checked ~ .carrusel__flechas--s1,
+#poveda-s2:checked ~ .carrusel__flechas--s2,
+#poveda-s3:checked ~ .carrusel__flechas--s3,
+#agujetas-s1:checked ~ .carrusel__flechas--s1,
+#agujetas-s2:checked ~ .carrusel__flechas--s2,
+#agujetas-s3:checked ~ .carrusel__flechas--s3,
+#garval-s1:checked ~ .carrusel__flechas--s1,
+#garval-s2:checked ~ .carrusel__flechas--s2,
+#garval-s3:checked ~ .carrusel__flechas--s3 {
+    display:flex;
+}
+
+.carrusel__flecha {
+    pointer-events:auto;
+    cursor:pointer;
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+    border:1px solid rgba(232,203,130,.5);
+    background:rgba(0,0,0,.5);
+
+    color:#e8cb82;
+    font-size:1.2rem;
+    line-height:1;
+
+    transition:background .2s,border-color .2s;
+}
+
+.carrusel__flecha:hover {
+    background:rgba(0,0,0,.8);
+    border-color:#e8cb82;
+}
+
+
+/* --- PUNTOS --- */
+
+.carrusel__puntos {
+    position:absolute;
+    left:50%;
+    bottom:.7rem;
+    z-index:2;
+
+    transform:translateX(-50%);
+
+    display:flex;
+    gap:.5rem;
+}
+
+.carrusel__punto {
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.6);
+    background:rgba(0,0,0,.4);
+
+    cursor:pointer;
+
+    transition:background .2s,transform .2s;
+}
+
+.carrusel__punto:hover {
+    transform:scale(1.25);
+    background:rgba(232,203,130,.6);
+}
+
+#rentacar-s1:checked ~ .carrusel__puntos label[for="rentacar-s1"],
+#rentacar-s2:checked ~ .carrusel__puntos label[for="rentacar-s2"],
+#rentacar-s3:checked ~ .carrusel__puntos label[for="rentacar-s3"],
+#carpa-s1:checked ~ .carrusel__puntos label[for="carpa-s1"],
+#carpa-s2:checked ~ .carrusel__puntos label[for="carpa-s2"],
+#carpa-s3:checked ~ .carrusel__puntos label[for="carpa-s3"],
+#torreblanca-s1:checked ~ .carrusel__puntos label[for="torreblanca-s1"],
+#torreblanca-s2:checked ~ .carrusel__puntos label[for="torreblanca-s2"],
+#torreblanca-s3:checked ~ .carrusel__puntos label[for="torreblanca-s3"],
+#poveda-s1:checked ~ .carrusel__puntos label[for="poveda-s1"],
+#poveda-s2:checked ~ .carrusel__puntos label[for="poveda-s2"],
+#poveda-s3:checked ~ .carrusel__puntos label[for="poveda-s3"],
+#agujetas-s1:checked ~ .carrusel__puntos label[for="agujetas-s1"],
+#agujetas-s2:checked ~ .carrusel__puntos label[for="agujetas-s2"],
+#agujetas-s3:checked ~ .carrusel__puntos label[for="agujetas-s3"],
+#garval-s1:checked ~ .carrusel__puntos label[for="garval-s1"],
+#garval-s2:checked ~ .carrusel__puntos label[for="garval-s2"],
+#garval-s3:checked ~ .carrusel__puntos label[for="garval-s3"] {
+    background:#e8cb82;
+    border-color:#e8cb82;
+}
+
+
+/* --- ACCESIBILIDAD: reducir movimiento --- */
+
+@media (prefers-reduced-motion:reduce) {
+    .carrusel__pista {
+        transition:none;
+    }
+}
+
+
+/* ============================
+   PANTALLA GRANDE (>1600px)
+============================ */
+
+@media(min-width:1600px){
+    .tarjetas {
+        max-width:1600px;
+    }
+
+    .portafolio-cabecera h1 {
+        font-size:3.4rem;
+    }
+
+    .tarjeta h2 {
+        font-size:1.3rem;
+    }
+
+    .tarjeta p {
+        font-size:.95rem;
+    }
+}
+
+
+/* ============================
+   PORTÁTIL / ORDENADOR PEQUEÑO (1200–1600px)
+============================ */
+
+@media(max-width:1200px){
+    .tarjetas {
+        max-width:1000px;
+        gap:1.2rem;
+    }
+
+    .tarjeta h2 {
+        font-size:1.05rem;
+    }
+
+    .tarjeta p {
+        font-size:.82rem;
+    }
+}
+
+
+/* ============================
+   TABLET (600–950px)
+============================ */
+
+@media(max-width:950px){
+    .portafolio {
+        min-height:100vh;
+        padding:3rem 5%;
+        overflow:visible;
+    }
+
+    .tarjetas {
+        grid-template-columns:repeat(2,1fr);
+        max-width:700px;
+    }
+
+    .portafolio-cabecera h1 {
+        font-size:2.2rem;
+    }
+}
+
+
+/* ============================
+   MÓVIL (<600px)
+============================ */
+
+@media(max-width:600px){
+    .portafolio {
+        min-height:100vh;
+        padding:2.5rem 1rem;
+        overflow:visible;
+    }
+
+    .portafolio-cabecera h1 {
+        font-size:1.7rem;
+    }
+
+    .tarjetas {
+        grid-template-columns:1fr;
+        gap:.8rem;
+        max-width:420px;
+    }
+
+    .contenido-tarjeta {
+        padding:1rem;
+    }
+
+    .tarjeta h2 {
+        font-size:.95rem;
+    }
+
+    .tarjeta p {
+        font-size:.78rem;
+        line-height:1.5;
+    }
+
+    .boton-proyecto {
+        padding:.55rem 1.3rem;
+        font-size:.78rem;
+    }
+
+    .sello {
+        width:48px;
+        height:48px;
+        margin-top:-24px;
+    }
+
+    .tarjeta__modal {
+        padding:1.2rem;
+    }
+
+    .tarjeta__modal-caja {
+        max-height:calc(100vh - 2.4rem);
+        padding:1.4rem 1.4rem 2rem;
+    }
+
+    .tarjeta__modal-caja h2 {
+        font-size:1.2rem;
+    }
+
+    .tarjeta__modal-caja p {
+        font-size:.85rem;
+        line-height:1.6;
+    }
+
+    .carrusel__flecha {
+        width:30px;
+        height:30px;
+        font-size:1rem;
+    }
+}
+
+
+/* ============================
+   MÓVIL PEQUEÑO (<400px)
+============================ */
+
+@media(max-width:400px){
+    .tarjeta h2 {
+        font-size:.92rem;
+    }
+
+    .tarjeta p {
+        font-size:.8rem;
+    }
+
+    .boton-proyecto {
+        padding:.5rem 1.1rem;
+        font-size:.78rem;
+    }
+}
+
+/* Tecnologías: información profesional secundaria, sin competir con el proyecto */
+.tarjeta__tecnologias {
+    margin: .25rem 0 .85rem;
+    color: #c9b98d;
+    font-size: .72rem !important;
+    line-height: 1.35 !important;
+    letter-spacing: .02em;
+}
+
+@media (max-width: 600px) {
+    .tarjeta__tecnologias {
+        font-size: .72rem !important;
+        margin-bottom: .7rem;
+    }
+}
+
+/* El ZIP recibido solo incluye una captura por proyecto. El visor se mantiene
+   preparado visualmente, pero sin controles rotos hasta añadir más capturas. */
+.carrusel__pista {
+    width: 100%;
+    transform: none !important;
+}
+.carrusel__diapositiva {
+    width: 100%;
+}

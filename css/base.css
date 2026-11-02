@@ -1,0 +1,1542 @@
+/* ============================
+   BASE / RESET
+============================ */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: "Cinzel", serif;
+}
+
+
+/* ============================
+   ESTRUCTURA PRINCIPAL
+============================ */
+
+main {
+    display: flex;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.col {
+    height: 100%;
+    background: #731803;
+}
+
+
+/* ============================
+   BOTÓN MOSTRAR/OCULTAR PANEL
+   Pestaña adherida al borde
+   izquierdo (mismo lado por el
+   que se oculta el panel).
+   Oculto en escritorio, solo se
+   muestra en los breakpoints
+   móvil/tablet definidos abajo.
+============================ */
+
+.boton-alternar-panel {
+    display: none;
+
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+
+    width: 44px;
+    height: 44px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, .65);
+    border: 1px solid rgba(244, 227, 178, .4);
+    border-radius: 50%;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+
+    color: #f4e3b2;
+    font-size: 1.1rem;
+
+    cursor: pointer;
+
+    transition: background .2s ease, color .2s ease;
+}
+
+.boton-alternar-panel i {
+    transition: transform .3s ease;
+}
+
+.boton-alternar-panel:hover,
+.boton-alternar-panel:focus-visible {
+    background: rgba(0, 0, 0, .85);
+    color: #ffe9a8;
+}
+
+.boton-alternar-panel:focus-visible {
+    outline: 2px solid #ffe9a8;
+    outline-offset: 2px;
+}
+
+
+/* ============================
+   COLUMNA IZQUIERDA
+   Landing page: el panel es fijo
+   en escritorio (siempre visible,
+   sin estados) y cajón oculto en
+   móvil/tablet (ver responsive).
+============================ */
+
+.izquierda {
+    width: 20vw;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+
+    background:
+        url("../imagenes/fondo.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+/*
+ * Capa oscura para garantizar contraste del texto
+ * sin depender del brillo de la imagen de fondo.
+ */
+.izquierda::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, .5),
+            rgba(0, 0, 0, .65)
+        );
+}
+
+.izquierda > * {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* ============================
+   LOGO
+============================ */
+
+.logo-boton {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+}
+
+.logo-boton:focus-visible {
+    outline: 2px solid #ffe9a8;
+    outline-offset: 3px;
+}
+
+.logo {
+    display: block;
+
+    width: 120px;
+    height: auto;
+}
+
+.logo-boton:hover .logo {
+    box-shadow:
+        0 2px 6px #000;
+}
+
+
+/* ============================
+   MENÚ
+============================ */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+
+    text-align: center;
+}
+
+.menu a {
+    position: relative;
+
+    color: #f4e3b2;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-decoration: none;
+
+    text-shadow:
+        0 2px 3px rgba(0, 0, 0, 1),
+        0 4px 10px rgba(0, 0, 0, 1),
+        0 0 20px rgba(0, 0, 0, .6);
+
+    transition: color 0.2s ease;
+
+    font-size: 1.3rem;
+
+    cursor: pointer;
+}
+
+.menu a:hover {
+    color: #ffe9a8;
+}
+
+
+/* Sección actualmente visible al hacer scroll */
+.menu a.activo {
+    color: #ffe9a8;
+}
+
+
+/* ============================
+   INFO / REDES / FOOTER
+============================ */
+
+.info {
+    margin-top: 2rem;
+
+    color: #fff;
+
+    font-size: 1rem;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1.3rem;
+
+    margin-bottom: .9rem;
+}
+
+.redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: #f4e3b2;
+    font-size: 1.5rem;
+
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 1),
+        0 0 14px rgba(0, 0, 0, .6);
+
+    transition: color .2s ease, transform .2s ease;
+}
+
+.redes a:hover {
+    color: #ffe9a8;
+    transform: translateY(-2px);
+}
+
+.footer-copy {
+    text-shadow:
+        0 2px 3px rgba(0, 0, 0, 1),
+        0 0 12px rgba(0, 0, 0, .6);
+}
+
+
+/* ============================
+   COLUMNA DERECHA
+============================ */
+
+.derecha {
+    flex: 1;
+
+    position: relative;
+
+    height: 100vh;
+
+    /*
+     * IMPORTANTE:
+     * la izquierda permanece fija
+     * y el scroll ocurre aquí — todas
+     * las secciones de la landing page
+     * se apilan y se recorren dentro
+     * de este contenedor.
+     */
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    scroll-behavior: smooth;
+
+    /*
+     * Mejora el scroll en dispositivos táctiles.
+     */
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* ============================
+   PANTALLA DE BIENVENIDA
+   Por defecto (y al pulsar el
+   personaje/logo), solo se ve el
+   panel de navegación a pantalla
+   completa — igual que antes.
+   Al pulsar cualquier enlace del
+   menú se revela el contenido.
+   Solo aplica en escritorio; en
+   móvil/tablet el panel ya tiene
+   su propio comportamiento de
+   cajón (ver responsive más abajo).
+============================ */
+
+@media (min-width: 701px) {
+
+    /*
+     * OJO: .derecha y #content son el MISMO elemento
+     * (<div class="col derecha" id="content">). Un selector
+     * de id siempre gana en especificidad a uno de clase, así
+     * que hay que apuntar también a #content aquí o la regla
+     * de más abajo (div#content{display:block}) la anularía
+     * sin importar la media query.
+     */
+
+    #content {
+        display: none;
+    }
+
+    .izquierda {
+        width: 100vw;
+    }
+
+    body.mostrar-contenido #content {
+        display: block;
+    }
+
+    body.mostrar-contenido .izquierda {
+        width: 20vw;
+    }
+
+}
+
+
+/* ============================
+   CONTENEDOR DE CONTENIDO
+============================ */
+
+div#content {
+    width: 100%;
+
+    min-height: 100%;
+
+    position: relative;
+
+    text-align: center;
+}
+
+
+/* ============================
+   ELEMENTOS GENERALES
+============================ */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* ============================
+   ACCESIBILIDAD: solo lectores
+   de pantalla (oculta visualmente
+   sin quitar el elemento del
+   árbol de accesibilidad)
+============================ */
+
+.sr-only {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .derecha {
+        scroll-behavior: auto;
+    }
+}
+
+
+/* ============================
+   SCROLL
+============================ */
+
+.derecha {
+    scrollbar-width: thin;
+    scrollbar-color:
+        rgba(244, 227, 178, 0.45)
+        rgba(0, 0, 0, 0.2);
+}
+
+.derecha::-webkit-scrollbar {
+    width: 8px;
+}
+
+.derecha::-webkit-scrollbar-track {
+    background:
+        rgba(0, 0, 0, 0.2);
+}
+
+.derecha::-webkit-scrollbar-thumb {
+    background:
+        rgba(244, 227, 178, 0.4);
+
+    border-radius: 10px;
+}
+
+.derecha::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(244, 227, 178, 0.65);
+}
+
+
+/* ============================
+   RESPONSIVE
+   3 escalones: tablet/portátil sin
+   maximizar (700px), móvil apaisado
+   (560px), móvil (480px).
+
+   En los 3, el panel izquierdo deja de
+   convivir en estrecho junto al contenido:
+   se oculta siempre por defecto y solo
+   aparece como overlay a pantalla completa
+   al pulsar el botón de mostrar/ocultar menú.
+============================ */
+
+@media (max-width: 700px) {
+
+    .boton-alternar-panel {
+        display: none;
+    }
+
+    body.mostrar-contenido .boton-alternar-panel {
+        display: flex;
+    }
+
+    /* La columna izquierda es la pantalla de bienvenida por
+       defecto en móvil también: visible al cargar, se oculta
+       solo cuando se muestra contenido. */
+    #content {
+        display: none;
+    }
+
+    .izquierda {
+        position: fixed;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        z-index: 150;
+
+        transform: translateX(0);
+
+        transition: transform .35s ease;
+    }
+
+    body.mostrar-contenido .izquierda {
+        transform: translateX(-100%);
+    }
+
+    body.mostrar-contenido #content {
+        display: block;
+        width: 100%;
+    }
+
+    .menu a {
+        font-size: 1.4rem;
+    }
+
+    .logo {
+        width: 110px;
+    }
+
+}
+
+
+@media (max-width: 560px) {
+
+    .izquierda {
+        gap: 1.4rem;
+    }
+
+    .menu {
+        gap: 1.1rem;
+    }
+
+    .menu a {
+        font-size: 1.2rem;
+    }
+
+    .logo {
+        width: 90px;
+    }
+
+    .info {
+        font-size: .9rem;
+    }
+
+    .redes a {
+        font-size: 1.4rem;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .boton-alternar-panel {
+        width: 40px;
+        height: 58px;
+    }
+
+    .izquierda {
+        gap: 1.1rem;
+    }
+
+    .menu {
+        gap: .9rem;
+    }
+
+    .menu a {
+        font-size: 1.05rem;
+    }
+
+    .logo {
+        width: 72px;
+    }
+
+    .info {
+        font-size: .8rem;
+        margin-top: 1.2rem;
+    }
+
+    .redes {
+        gap: 1rem;
+    }
+
+    .redes a {
+        font-size: 1.3rem;
+    }
+
+}
+/* ============================
+   ACABADO ENTRE SECCIONES
+   Evita costuras negras cuando una sección no cubre
+   exactamente todo el ancho/alto del panel de contenido.
+============================ */
+html,
+body,
+main,
+#content,
+.derecha {
+    background: #17110d;
+}
+
+#content > section,
+#content > div {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#juanjo,
+#sobremi,
+#portfolio,
+#educacion,
+#skills,
+#hobbies,
+#contacto,
+#mapa {
+    margin-inline: 0;
+}
+
+/* ============================================================
+   NAVEGACIÓN ENTRE SECCIONES
+   Reutiliza el lenguaje visual del control "Explorar" del Inicio.
+============================================================ */
+.seccion-con-navegacion {
+    position: relative;
+}
+
+.seccion-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    pointer-events: none;
+}
+
+.seccion-nav--anterior { top: 14px; }
+.seccion-nav--siguiente { bottom: 14px; }
+
+.seccion-nav__boton {
+    pointer-events: auto;
+    border: 0;
+    background: rgba(10, 9, 8, .54);
+    color: #c9bfa7;
+    padding: 7px 13px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    font-family: "Cinzel", serif;
+    font-size: .67rem;
+    font-weight: 600;
+    letter-spacing: .13em;
+    line-height: 1.25;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    opacity: .78;
+    text-shadow: 0 2px 5px rgba(0,0,0,.9);
+    box-shadow: 0 0 0 1px rgba(218, 195, 145, .08);
+    transition: opacity .18s ease, color .18s ease, background .18s ease, transform .18s ease;
+}
+
+.seccion-nav__boton:hover,
+.seccion-nav__boton:focus-visible {
+    opacity: 1;
+    color: #fff0c8;
+    background: rgba(12, 10, 8, .78);
+    outline: none;
+}
+
+.seccion-nav__boton i {
+    font-size: .72rem;
+}
+
+.seccion-nav--siguiente .seccion-nav__boton i {
+    animation: flechaSeccionAbajo 1.7s ease-in-out infinite;
+}
+
+.seccion-nav--anterior .seccion-nav__boton i {
+    animation: flechaSeccionArriba 1.7s ease-in-out infinite;
+}
+
+@keyframes flechaSeccionAbajo {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+}
+
+@keyframes flechaSeccionArriba {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@media (max-width: 700px) {
+    .seccion-nav--anterior { top: 8px; }
+    .seccion-nav--siguiente { bottom: 8px; }
+    .seccion-nav__boton {
+        font-size: .6rem;
+        letter-spacing: .1em;
+        padding: 6px 10px 5px;
+        background: rgba(10, 9, 8, .68);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .seccion-nav__boton i { animation: none !important; }
+}
+
+/* ============================================================
+   AJUSTES UI — estado activo, navegación y títulos compactos
+============================================================ */
+
+/* Indicador de sección activa: dos rayones rojos detrás del enlace */
+.menu a.activo {
+    color: #fff0c8;
+    text-shadow:
+        0 2px 3px rgba(0,0,0,1),
+        0 0 10px rgba(145,18,12,.5);
+}
+
+.menu a.activo::before,
+.menu a.activo::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(110, 8, 5, .15) 7%,
+        rgba(163, 22, 14, .92) 28%,
+        rgba(104, 7, 4, .86) 72%,
+        transparent 100%);
+    filter: drop-shadow(0 1px 1px rgba(0,0,0,.85));
+    transform-origin: center;
+}
+
+.menu a.activo::before {
+    width: calc(100% + 30px);
+    height: 7px;
+    top: 52%;
+    transform: translate(-50%, -50%) rotate(-5deg) skewX(-18deg);
+    opacity: .92;
+}
+
+.menu a.activo::after {
+    width: calc(72% + 16px);
+    height: 4px;
+    top: 67%;
+    transform: translate(-45%, -50%) rotate(4deg) skewX(14deg);
+    opacity: .72;
+}
+
+/* Navegación anterior / siguiente: más aire, mejor foco y área táctil */
+.seccion-nav--anterior { top: 18px; }
+.seccion-nav--siguiente { bottom: 18px; }
+
+.seccion-nav__boton {
+    min-height: 44px;
+    min-width: 154px;
+    padding: 9px 16px 8px;
+    margin: 0;
+    gap: 4px;
+    border: 1px solid rgba(218, 195, 145, .14);
+    border-radius: 2px;
+    background: rgba(10, 9, 8, .66);
+    opacity: .9;
+    box-shadow:
+        0 4px 14px rgba(0,0,0,.28),
+        inset 0 0 0 1px rgba(255,255,255,.018);
+}
+
+.seccion-nav__boton:hover {
+    transform: translateY(-1px);
+}
+
+.seccion-nav__boton:focus-visible {
+    opacity: 1;
+    color: #fff4d6;
+    background: rgba(18, 14, 11, .94);
+    outline: 2px solid #f0cf79;
+    outline-offset: 3px;
+    box-shadow: 0 0 0 5px rgba(96, 15, 10, .28);
+}
+
+.seccion-nav__boton:active {
+    transform: translateY(0);
+}
+
+/* El control de Inicio comparte tamaño y foco con el resto */
+.juanjo-scroll {
+    min-height: 44px;
+    min-width: 154px;
+    padding: 8px 14px 7px;
+    border: 1px solid rgba(218,195,145,.12);
+    background: rgba(10,9,8,.48);
+    opacity: .88;
+}
+
+.juanjo-scroll:focus-visible {
+    outline: 2px solid #f0cf79;
+    outline-offset: 3px;
+    color: #fff4d6;
+    opacity: 1;
+}
+
+/* Títulos principales de sección: más contenidos y con menos margen */
+.portafolio-cabecera,
+.habilidades__header {
+    margin-bottom: 1.15rem !important;
+}
+
+.portafolio-cabecera h1,
+.habilidades__header h1,
+.educacion-titulo {
+    font-size: clamp(1.65rem, 3vw, 2.25rem) !important;
+}
+
+.habilidades__header p {
+    margin: .35rem 0 0;
+}
+
+@media (min-width: 1600px) {
+    .portafolio-cabecera h1,
+    .habilidades__header h1,
+    .educacion-titulo {
+        font-size: 2.35rem !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .seccion-nav--anterior { top: 10px; }
+    .seccion-nav--siguiente { bottom: 10px; }
+
+    .seccion-nav__boton,
+    .juanjo-scroll {
+        min-height: 44px;
+        min-width: 142px;
+        padding: 8px 12px 7px;
+        font-size: .61rem;
+    }
+
+    .portafolio-cabecera,
+    .habilidades__header {
+        margin-bottom: .8rem !important;
+    }
+
+    .portafolio-cabecera h1,
+    .habilidades__header h1,
+    .educacion-titulo {
+        font-size: clamp(1.45rem, 7vw, 1.9rem) !important;
+    }
+}
+
+
+/* ============================================================
+   AJUSTE NAVEGACIÓN V2 — flechas limpias + tooltip accesible
+============================================================ */
+.seccion-nav--anterior { top: 16px !important; }
+.seccion-nav--siguiente { bottom: 16px !important; }
+
+.seccion-nav__boton,
+.juanjo-scroll {
+    position: relative;
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    min-height: 46px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(10, 9, 8, .62) !important;
+    border: 1px solid rgba(231, 204, 145, .26) !important;
+    color: #ead6a0 !important;
+    box-shadow: 0 5px 16px rgba(0,0,0,.32), inset 0 0 0 1px rgba(255,255,255,.02) !important;
+    opacity: .88;
+    overflow: visible !important;
+}
+
+.seccion-nav__boton i,
+.juanjo-scroll i {
+    font-size: 1rem !important;
+    line-height: 1;
+}
+
+.seccion-nav__boton:hover,
+.juanjo-scroll:hover,
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible {
+    opacity: 1;
+    color: #fff2c7 !important;
+    background: rgba(20, 15, 11, .92) !important;
+    border-color: rgba(240, 207, 121, .58) !important;
+}
+
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible {
+    outline: 2px solid #f0cf79 !important;
+    outline-offset: 3px !important;
+}
+
+/* Tooltip visible con ratón y teclado */
+.seccion-nav__boton::after,
+.juanjo-scroll::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    width: max-content;
+    max-width: 230px;
+    padding: 7px 10px;
+    border-radius: 4px;
+    background: rgba(12, 10, 8, .96);
+    border: 1px solid rgba(231, 204, 145, .28);
+    color: #f4e4b8;
+    font-family: "Cinzel", serif;
+    font-size: .67rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    line-height: 1.25;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .16s ease, transform .16s ease;
+    box-shadow: 0 7px 22px rgba(0,0,0,.38);
+}
+
+.seccion-nav--anterior .seccion-nav__boton::after {
+    top: calc(100% + 8px);
+}
+
+.seccion-nav--siguiente .seccion-nav__boton::after,
+.juanjo-scroll::after {
+    bottom: calc(100% + 8px);
+}
+
+.seccion-nav__boton:hover::after,
+.seccion-nav__boton:focus-visible::after,
+.juanjo-scroll:hover::after,
+.juanjo-scroll:focus-visible::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Franja segura para que navegación y títulos nunca se pisen */
+#portfolio,
+#educacion,
+#skills,
+#hobbies,
+#contacto,
+#mapa,
+#sobremi {
+    scroll-margin-top: 0;
+}
+
+#skills.habilidades {
+    padding-top: 5.25rem !important;
+    padding-bottom: 4.75rem !important;
+}
+
+/* Títulos de sección con tamaño fijo, sin clamp */
+.portafolio-cabecera h1,
+.habilidades__header h1,
+.educacion-titulo,
+.placa-contacto__titulo {
+    font-size: 2rem !important;
+    line-height: 1.12 !important;
+}
+
+.portafolio-cabecera,
+.habilidades__header {
+    margin-bottom: 1.35rem !important;
+}
+
+.educacion-titulo {
+    margin-bottom: 1.1rem !important;
+}
+
+@media (max-width: 700px) {
+    .seccion-nav--anterior { top: 10px !important; }
+    .seccion-nav--siguiente { bottom: 10px !important; }
+
+    .seccion-nav__boton,
+    .juanjo-scroll {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+    }
+
+    .portafolio-cabecera h1,
+    .habilidades__header h1,
+    .educacion-titulo,
+    .placa-contacto__titulo {
+        font-size: 1.65rem !important;
+    }
+
+    #skills.habilidades {
+        padding-top: 4.4rem !important;
+        padding-bottom: 4.2rem !important;
+    }
+
+    .seccion-nav__boton::after,
+    .juanjo-scroll::after {
+        font-size: .62rem;
+        max-width: 190px;
+    }
+}
+
+
+/* ============================================================
+   AJUSTES V3 — navegación sin marco ni movimiento
+============================================================ */
+.seccion-nav__boton,
+.juanjo-scroll {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    color: #dbc99c !important;
+    opacity: .82 !important;
+    transition: color .14s ease, opacity .14s ease !important;
+    transform: none !important;
+}
+
+.seccion-nav__boton:hover,
+.juanjo-scroll:hover,
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: #fff0c4 !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.seccion-nav__boton i,
+.juanjo-scroll i {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* El tooltip aparece sin desplazamiento visual */
+.seccion-nav__boton::after,
+.juanjo-scroll::after {
+    transform: translateX(-50%) !important;
+    transition: opacity .14s ease, visibility .14s ease !important;
+}
+
+.seccion-nav__boton:hover::after,
+.seccion-nav__boton:focus-visible::after,
+.juanjo-scroll:hover::after,
+.juanjo-scroll:focus-visible::after {
+    transform: translateX(-50%) !important;
+}
+
+
+/* ============================================================
+   CORRECCIÓN DEFINITIVA — navegación entre secciones
+   Icono puro: sin círculo, borde, fondo ni movimiento.
+============================================================ */
+.seccion-nav__boton,
+.juanjo-scroll,
+.seccion-nav__boton:hover,
+.juanjo-scroll:hover,
+.seccion-nav__boton:focus,
+.juanjo-scroll:focus,
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible,
+.seccion-nav__boton:active,
+.juanjo-scroll:active {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    min-height: 36px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    color: #dbc99c !important;
+    opacity: .88 !important;
+}
+
+.seccion-nav__boton:hover,
+.juanjo-scroll:hover,
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible {
+    color: #fff0c4 !important;
+    opacity: 1 !important;
+}
+
+.seccion-nav__boton i,
+.juanjo-scroll i,
+.seccion-nav__boton:hover i,
+.juanjo-scroll:hover i,
+.seccion-nav__boton:focus-visible i,
+.juanjo-scroll:focus-visible i {
+    display: block !important;
+    font-size: 1.05rem !important;
+    line-height: 1 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* foco accesible sin recuperar el círculo */
+.seccion-nav__boton:focus-visible i,
+.juanjo-scroll:focus-visible i {
+    outline: 2px solid #f0cf79 !important;
+    outline-offset: 5px !important;
+}
+
+/* tooltip: aparece/desaparece, pero no se desplaza ni anima */
+.seccion-nav__boton::after,
+.juanjo-scroll::after,
+.seccion-nav__boton:hover::after,
+.juanjo-scroll:hover::after,
+.seccion-nav__boton:focus-visible::after,
+.juanjo-scroll:focus-visible::after {
+    transform: translateX(-50%) !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* ============================================================
+   CORRECCIÓN FINAL UI — navegación de secciones realmente limpia
+============================================================ */
+.seccion-nav {
+    width: auto !important;
+    height: auto !important;
+    pointer-events: none !important;
+}
+.seccion-nav--anterior { top: 16px !important; }
+.seccion-nav--siguiente { bottom: 16px !important; }
+
+.seccion-nav__boton,
+.juanjo-scroll,
+.seccion-nav__boton:hover,
+.juanjo-scroll:hover,
+.seccion-nav__boton:focus,
+.juanjo-scroll:focus,
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible,
+.seccion-nav__boton:active,
+.juanjo-scroll:active {
+    pointer-events: auto !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    color: #d9c795 !important;
+    opacity: .9 !important;
+}
+
+.seccion-nav__boton i,
+.juanjo-scroll i,
+.seccion-nav__boton:hover i,
+.juanjo-scroll:hover i,
+.seccion-nav__boton:focus-visible i,
+.juanjo-scroll:focus-visible i {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+    font-size: 1rem !important;
+    line-height: 1 !important;
+}
+
+/* foco accesible sin borde/círculo: solo aumenta contraste del icono */
+.seccion-nav__boton:hover,
+.juanjo-scroll:hover,
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible {
+    color: #fff0bd !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 8px rgba(240,207,121,.55) !important;
+}
+
+.seccion-nav__boton::before,
+.juanjo-scroll::before {
+    content: none !important;
+    display: none !important;
+}
+
+/* El tooltip sí conserva su caja para poder leerse */
+.seccion-nav__boton::after,
+.juanjo-scroll::after {
+    content: attr(data-tooltip) !important;
+    position: absolute !important;
+    left: 50% !important;
+    width: max-content !important;
+    max-width: 230px !important;
+    padding: 7px 10px !important;
+    border-radius: 3px !important;
+    border: 1px solid rgba(231,204,145,.24) !important;
+    background: rgba(12,10,8,.96) !important;
+    color: #f4e4b8 !important;
+    font-family: "Cinzel", serif !important;
+    font-size: .67rem !important;
+    font-weight: 600 !important;
+    letter-spacing: .04em !important;
+    line-height: 1.25 !important;
+    white-space: nowrap !important;
+    pointer-events: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(-50%) !important;
+    transition: none !important;
+    animation: none !important;
+    box-shadow: 0 7px 22px rgba(0,0,0,.38) !important;
+    text-shadow: none !important;
+}
+.seccion-nav--anterior .seccion-nav__boton::after { top: calc(100% + 7px) !important; bottom: auto !important; }
+.seccion-nav--siguiente .seccion-nav__boton::after,
+.juanjo-scroll::after { bottom: calc(100% + 7px) !important; top: auto !important; }
+.seccion-nav__boton:hover::after,
+.seccion-nav__boton:focus-visible::after,
+.juanjo-scroll:hover::after,
+.juanjo-scroll:focus-visible::after {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) !important;
+}
+
+/* ============================================================
+   TÍTULOS DE SECCIÓN AÑADIDOS
+============================================================ */
+.titulo-seccion-visible {
+    position: relative;
+    z-index: 8;
+    margin: 0;
+    padding: 0;
+    font-family: "Cinzel", serif;
+    font-size: 2rem;
+    line-height: 1.1;
+    font-weight: 700;
+    color: #f1eadc;
+    text-align: center;
+    text-shadow: 0 3px 8px rgba(0,0,0,.85);
+}
+.titulo-seccion-visible--superior {
+    position: absolute;
+    top: 4.9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(92%, 900px);
+    pointer-events: none;
+}
+@media (max-width:700px) {
+    .titulo-seccion-visible { font-size: 1.65rem; }
+    .titulo-seccion-visible--superior { top: 4.3rem; }
+}
+
+
+/* ============================================================
+   V5 — TÍTULOS NUEVOS: POSICIÓN CORRECTA Y CONSISTENTE
+============================================================ */
+/* Los títulos añadidos dejan de flotar demasiado abajo. Se colocan
+   en la franja superior de cada sección, por debajo de la navegación. */
+.titulo-seccion-visible--superior {
+    top: 1.65rem !important;
+    left: 50% !important;
+    width: min(92%, 980px) !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: .06em !important;
+    font-size: 2rem !important;
+    line-height: 1.05 !important;
+}
+
+/* Se reserva espacio real para el título, evitando que quede pegado al
+   libro, a los hobbies o a la placa de contacto. */
+#sobremi.medieval-book-section {
+    padding-top: 6.6rem !important;
+}
+#hobbies.jj-hobbies {
+    padding-top: 7rem !important;
+}
+#contacto.contacto-container {
+    padding-top: 7rem !important;
+}
+
+.educacion-titulo {
+    text-transform: uppercase !important;
+    letter-spacing: .06em !important;
+}
+
+@media (max-width: 700px) {
+    .titulo-seccion-visible--superior {
+        top: 1.25rem !important;
+        font-size: 1.65rem !important;
+    }
+    #sobremi.medieval-book-section,
+    #hobbies.jj-hobbies,
+    #contacto.contacto-container {
+        padding-top: 5.5rem !important;
+    }
+}
+
+
+/* ============================================================
+   V6 — TÍTULOS BAJO NAVEGACIÓN SUPERIOR
+============================================================ */
+.titulo-seccion-visible--superior {
+    top: 5.2rem !important;
+}
+#sobremi.medieval-book-section,
+#hobbies.jj-hobbies,
+#contacto.contacto-container {
+    padding-top: 9rem !important;
+}
+@media (max-width:700px) {
+    .titulo-seccion-visible--superior {
+        top: 4.35rem !important;
+    }
+    #sobremi.medieval-book-section,
+    #hobbies.jj-hobbies,
+    #contacto.contacto-container {
+        padding-top: 7.6rem !important;
+    }
+}
+
+/* ============================================================
+   CABECERAS DE SECCIÓN — EN FLUJO, NO FLOTANTES
+   ============================================================ */
+.seccion-cabecera-normal {
+    position: relative !important;
+    z-index: 8 !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 0 2.1rem !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+}
+
+.seccion-cabecera-normal .titulo-seccion-visible {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
+    text-transform: uppercase !important;
+    letter-spacing: .06em !important;
+    text-align: center !important;
+}
+
+/* La flecha superior ocupa su propia franja; el título empieza después. */
+#sobremi.medieval-book-section,
+#contacto.contacto-container {
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding-top: 5.25rem !important;
+    padding-bottom: 4.25rem !important;
+}
+
+#hobbies.jj-hobbies {
+    padding-top: 5.25rem !important;
+    padding-bottom: 4.25rem !important;
+}
+
+/* Ya no se utiliza el posicionamiento absoluto histórico. */
+.titulo-seccion-visible--superior {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+}
+
+@media (max-width: 700px) {
+    .seccion-cabecera-normal { margin-bottom: 1.45rem !important; }
+    .seccion-cabecera-normal .titulo-seccion-visible { font-size: 1.65rem !important; }
+    #sobremi.medieval-book-section,
+    #contacto.contacto-container,
+    #hobbies.jj-hobbies {
+        padding-top: 4.5rem !important;
+        padding-bottom: 3.75rem !important;
+    }
+}
+
+
+/* ============================================================
+   ACCESIBILIDAD — TEXTO, FOCO Y CONTROLES
+   ============================================================ */
+html { scroll-behavior: smooth; }
+body {
+    font-size: 16px;
+    line-height: 1.55;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 99999;
+    padding: 10px 14px;
+    background: #0b0b0b;
+    color: #fff4df;
+    border: 2px solid #d44a3a;
+    border-radius: 3px;
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: .9rem;
+    text-decoration: none;
+    transform: translateY(-180%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+/* Texto general: evita tamaños demasiado pequeños y mejora contraste. */
+p, li, .menu a, .footer-copy, .tarjeta p, .medieval-book__intro {
+    line-height: 1.55;
+}
+.menu a { font-size: max(.95rem, 15px); }
+.footer-copy { font-size: max(.78rem, 13px); color: #cfc7b8; }
+
+/* Todos los títulos de sección comparten tamaño fijo y jerarquía visual. */
+.titulo-seccion-visible,
+.seccion-cabecera-normal .titulo-seccion-visible,
+.portafolio-cabecera h1,
+.educacion-titulo,
+.habilidades__header h1,
+.mapa-titulo,
+#mapa h1,
+#mapa h2 {
+    font-family: "Cinzel", serif !important;
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    letter-spacing: .045em !important;
+    text-transform: uppercase !important;
+    color: #f4eee2 !important;
+    text-shadow: 0 2px 5px rgba(0,0,0,.8) !important;
+}
+
+/* Foco visible y consistente para teclado. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid #f0c65a !important;
+    outline-offset: 4px !important;
+}
+
+/* Controles clicables con tamaño táctil razonable. */
+.btn-cv,
+.btn-explorar,
+.boton-proyecto,
+.logo-boton,
+.boton-alternar-panel {
+    min-height: 44px;
+}
+
+/* Flechas: siguen sin borde/círculo, pero el foco accesible queda en el icono. */
+.seccion-nav__boton,
+.juanjo-scroll {
+    min-width: 44px !important;
+    min-height: 44px !important;
+}
+.seccion-nav__boton:focus-visible,
+.juanjo-scroll:focus-visible {
+    outline: none !important;
+    color: #fff0bd !important;
+    text-shadow: 0 0 0 transparent, 0 0 8px rgba(240,198,90,.75) !important;
+}
+
+/* Tooltips más legibles. */
+.seccion-nav__boton::after,
+.juanjo-scroll::after {
+    font-size: .76rem !important;
+    line-height: 1.35 !important;
+    padding: 8px 11px !important;
+    color: #fff4df !important;
+    background: rgba(5,5,5,.98) !important;
+    border-color: rgba(255,255,255,.30) !important;
+}
+
+@media (max-width:700px) {
+    body { font-size: 16px; }
+    .titulo-seccion-visible,
+    .seccion-cabecera-normal .titulo-seccion-visible,
+    .portafolio-cabecera h1,
+    .educacion-titulo,
+    .habilidades__header h1,
+    .mapa-titulo,
+    #mapa h1,
+    #mapa h2 {
+        font-size: 1.65rem !important;
+        line-height: 1.25 !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+
+/* Menú lateral: mayor legibilidad y presencia en escritorio. */
+@media (min-width: 901px) {
+    .menu a {
+        font-size: 1.55rem;
+        line-height: 1.25;
+    }
+}
+

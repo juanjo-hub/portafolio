@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Portafolio de Juan José Angulo Gómez, estudiante de Desarrollo de Aplicaciones Web con proyectos reales de diseño, desarrollo y gestión web." name="description"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"/>
+<title>Juan José Angulo Gómez | Desarrollo Web</title>
+<!-- CSS general -->
+<link href="css/base.css" rel="stylesheet"/>
+<!-- CSS de cada sección de la landing page -->
+<link href="css/juanjo.css" rel="stylesheet"/>
+<link href="css/sobremi.css" rel="stylesheet"/>
+<link href="css/portfolio.css" rel="stylesheet"/>
+<link href="css/educacion.css" rel="stylesheet"/>
+<link href="css/skills.css" rel="stylesheet"/>
+<link href="css/hobbies.css" rel="stylesheet"/>
+<link href="css/contacto.css" rel="stylesheet"/>
+<link href="css/mapa.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&amp;display=swap" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#content">Saltar al contenido principal</a>
+<button aria-controls="columna-izquierda" aria-label="Volver al menú" class="boton-alternar-panel" id="botonMenu" type="button">
+<i aria-hidden="true" class="fa-solid fa-chevron-left"></i>
+</button>
+<main>
+<div class="col izquierda" id="columna-izquierda">
+<button aria-label="Ir al inicio" class="logo-boton" id="botonLogo" type="button">
+<img alt="Emblema de Juan José Angulo Gómez" class="logo" src="imagenes/yomedievo.webp"/>
+</button>
+<nav aria-label="Menú principal" class="menu">
+<a data-page="juanjo" href="#juanjo">Inicio</a>
+<a data-page="sobremi" href="#sobremi">Sobre mí</a>
+<a data-page="portfolio" href="#portfolio">Proyectos</a>
+<a data-page="educacion" href="#educacion">Formación</a>
+<a data-page="skills" href="#skills">Skills</a>
+<a data-page="hobbies" href="#hobbies">Hobbies</a>
+<a data-page="contacto" href="#contacto">Contacto</a>
+<a data-page="mapa" href="#mapa">Mapa</a>
+</nav>
+<div class="info">
+<nav aria-label="Redes sociales" class="redes">
+<a aria-label="LinkedIn" href="https://www.linkedin.com/in/tu-perfil" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-linkedin"></i></a>
+<a aria-label="GitHub" href="https://github.com/tu-usuario" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-github"></i></a>
+<a aria-label="Instagram" href="https://www.instagram.com/tu-instagram" rel="noopener noreferrer" target="_blank"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
+</nav>
+<p class="footer-copy">© 2026 – Juan José Angulo Gómez</p>
+</div>
+</div>
+<!-- LANDING PAGE: todas las secciones, una tras otra -->
+<div class="col derecha" id="content">
+<!-- ============ SECCIÓN: JUANJO ============ -->
+<div class="juanjo-container seccion-con-navegacion" id="juanjo">
+<div aria-hidden="true" class="juanjo-escena juanjo-escena--video">
+<video class="juanjo-video juanjo-video--principal" autoplay muted loop playsinline preload="auto" tabindex="-1">
+<source src="videos/inicio-wallpaper.mp4" type="video/mp4"/>
+</video>
+</div>
+<div class="juanjo-bocadillo">
+<p class="juanjo-bienvenida">Bienvenido a mi portfolio.</p>
+</div>
+<div class="juanjo-contenido">
+<h1 id="h1-nombre">Juan José Angulo Gómez</h1>
+<p class="juanjo-subtitulo">DESARROLLADOR WEB</p>
+<div class="juanjo-acciones" aria-label="Acciones principales">
+<a class="btn-cv" href="angulo_gomez_juanjose_CV.pdf" target="_blank" rel="noopener noreferrer" aria-label="Abrir currículum en PDF en una pestaña nueva">Ver CV</a>
+<button class="btn-explorar" data-destino="portfolio" type="button">Ver proyectos</button>
+</div>
+<button aria-label="Pasar a la siguiente sección: Sobre mí" class="juanjo-scroll" data-tooltip="Pasar a la siguiente sección" data-destino="sobremi" type="button">
+<i aria-hidden="true" class="fa-solid fa-chevron-down"></i>
+</button>
+</div>
+</div>
+<!-- ============ SECCIÓN: SOBREMI ============ -->
+<section class="medieval-book-section seccion-con-navegacion" id="sobremi"><div class="seccion-nav seccion-nav--anterior"><button aria-label="Pasar a la sección anterior" class="seccion-nav__boton" data-tooltip="Pasar a la sección anterior" data-destino="juanjo" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-up"></i></button></div>
+<header class="seccion-cabecera-normal"><h1 class="titulo-seccion-visible">SOBRE MÍ</h1></header>
+<div class="medieval-book">
+<!-- GROSOR DE LAS PÁGINAS -->
+<div class="medieval-book__pages medieval-book__pages--left"></div>
+<div class="medieval-book__pages medieval-book__pages--right"></div>
+<!-- PÁGINA IZQUIERDA -->
+<article class="medieval-book__page medieval-book__page--left">
+<div class="medieval-book__content">
+<span class="medieval-book__eyebrow">
+          Sobre mí
+        </span>
+<br/>
+<p class="medieval-book__intro">Me llamo Juan José Angulo Gómez y soy desarrollador web en formación. Después de una etapa profesional alejada de la informática, retomé los estudios con un Grado Medio de Gestión Administrativa. Durante sus prácticas volví a trabajar con páginas web mediante un CMS y confirmé que quería orientar mi camino profesional al desarrollo web.</p></div>
+<span class="medieval-book__number">
+        I
+      </span>
+</article>
+<!-- PÁGINA DERECHA -->
+<article class="medieval-book__page medieval-book__page--right">
+<div class="medieval-book__content">
+<span class="medieval-book__eyebrow">
+          Mi camino
+        </span><br/>
+<p class="medieval-book__intro">Actualmente curso el Grado Superior de Desarrollo de Aplicaciones Web y el certificado profesional IFCD0210. Además, completé formación de nivel 2 en diseño y desarrollo web y he participado en proyectos reales, desde creación y rediseño de sitios hasta mantenimiento y gestión de contenidos. Sigo ampliando conocimientos con un objetivo claro: dedicarme profesionalmente al desarrollo web y continuar creciendo proyecto a proyecto.</p></div>
+<span class="medieval-book__number">
+        II
+      </span>
+</article>
+<!-- CINTA DE MARCAPÁGINAS -->
+<div class="medieval-book__ribbon"></div>
+<!-- SOMBRA DEL LOMO -->
+<div class="medieval-book__spine"></div>
+</div>
+<div class="seccion-nav seccion-nav--siguiente"><button aria-label="Pasar a la siguiente sección" class="seccion-nav__boton" data-tooltip="Pasar a la siguiente sección" data-destino="portfolio" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-down"></i></button></div></section>
+<!-- ============ SECCIÓN: PORTFOLIO ============ -->
+<section aria-labelledby="titulo-portafolio" class="portafolio seccion-con-navegacion" id="portfolio"><div class="seccion-nav seccion-nav--anterior"><button aria-label="Pasar a la sección anterior" class="seccion-nav__boton" data-tooltip="Pasar a la sección anterior" data-destino="sobremi" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-up"></i></button></div>
+<header class="portafolio-cabecera">
+<h1 id="titulo-portafolio">Mis proyectos</h1>
+</header>
+<div class="tarjetas"><!-- =========================
+     RENTACAR
+========================= --><article class="tarjeta tarjeta--rentacar">
+<a aria-label="Ver detalles de Rentacar Ciudad Real" class="tarjeta__enlace-completo" href="#modal-rentacar"></a>
+<div class="contenido-tarjeta">
+<div class="imagen-proyecto">
+<img alt="Captura de Rentacar Ciudad Real" src="imagenes/sitios-web/rentacar.webp"/>
+</div>
+<div class="sello">
+<img alt="Logo Rentacar Ciudad Real" src="imagenes/iconos/rentacarciudadreal.png"/>
+</div>
+<h2>Rentacar Ciudad Real</h2>
+<p>Renovación de una web de alquiler de vehículos…</p>
+<p class="tarjeta__tecnologias">WordPress · Divi · HTML/CSS/JavaScript</p><a class="boton-proyecto boton-proyecto--vermas" href="#modal-rentacar">Ver más</a>
+</div>
+</article><!-- =========================
+     CARPA Y FIESTA
+========================= --><article class="tarjeta tarjeta--carpa">
+<a aria-label="Ver detalles de Carpa y Fiesta" class="tarjeta__enlace-completo" href="#modal-carpa"></a>
+<div class="contenido-tarjeta">
+<div class="imagen-proyecto">
+<img alt="Captura de Carpa y Fiesta" src="imagenes/sitios-web/carpayfiesta.webp"/>
+</div>
+<div class="sello">
+<img alt="Logo Carpa y Fiesta" src="imagenes/iconos/carpayfiesta.png"/>
+</div>
+<h2>Carpa y Fiesta</h2>
+<p>Renovación completa de la web, con un nuevo flujo…</p>
+<p class="tarjeta__tecnologias">WordPress · Diseño web · Responsive</p><a class="boton-proyecto boton-proyecto--vermas" href="#modal-carpa">Ver más</a>
+</div>
+</article><!-- =========================
+     GRUPO TORREBLANCA
+========================= --><article class="tarjeta tarjeta--torreblanca">
+<a aria-label="Ver detalles de Grupo Torreblanca" class="tarjeta__enlace-completo" href="#modal-torreblanca"></a>
+<div class="contenido-tarjeta">
+<div class="imagen-proyecto">
+<img alt="Captura de Grupo Torreblanca" src="imagenes/sitios-web/grupotorreblanca.webp"/>
+</div>
+<div class="sello">
+<img alt="Logo Grupo Torreblanca" src="imagenes/iconos/grupotorreblanca.png"/>
+</div>
+<h2>Grupo Torreblanca</h2>
+<p>Rediseño de la web corporativa, estructurada en…</p>
+<p class="tarjeta__tecnologias">WordPress · Diseño web · Contenido</p><a class="boton-proyecto boton-proyecto--vermas" href="#modal-torreblanca">Ver más</a>
+</div>
+</article><!-- =========================
+     SUMINISTROS GARVAL
+========================= --><article class="tarjeta tarjeta--garval">
+<a aria-label="Ver detalles de Suministros Garval" class="tarjeta__enlace-completo" href="#modal-garval"></a>
+<div class="contenido-tarjeta">
+<div class="imagen-proyecto">
+<img alt="Captura de Suministros Garval" src="imagenes/sitios-web/suministros-garval.webp"/>
+</div>
+<div class="sello">
+<img alt="Logo Suministros Garval" src="imagenes/iconos/suministrosgarval.png"/>
+</div>
+<h2>Suministros Garval</h2>
+<p>En este proyecto no hubo rediseño completo ni…</p>
+<p class="tarjeta__tecnologias">Hostinger Builder · E-commerce · Accesibilidad</p><a class="boton-proyecto boton-proyecto--vermas" href="#modal-garval">Ver más</a>
+</div>
+</article><!-- =========================
+     POVEDA Y NOGUERA
+========================= --><article class="tarjeta tarjeta--poveda">
+<a aria-label="Ver detalles de Poveda &amp; Noguera" class="tarjeta__enlace-completo" href="#modal-poveda"></a>
+<div class="contenido-tarjeta">
+<div class="imagen-proyecto">
+<img alt="Captura de Poveda &amp; Noguera" src="imagenes/sitios-web/povedaynoguera.webp"/>
+</div>
+<div class="sello">
+<img alt="Logo Poveda &amp; Noguera" src="imagenes/iconos/povedaynoguera.jpeg"/>
+</div>
+<h2>Poveda &amp; Noguera</h2>
+<p>Página corporativa elegante y sencilla para una…</p>
+<p class="tarjeta__tecnologias">WordPress · Astra · HTML/CSS</p><a class="boton-proyecto boton-proyecto--vermas" href="#modal-poveda">Ver más</a>
+</div>
+</article><!-- =========================
+     AGUJETAS Y DINERO
+========================= --><article class="tarjeta tarjeta--agujetas">
+<a aria-label="Ver detalles de Agujetas &amp; Dinero" class="tarjeta__enlace-completo" href="#modal-agujetas"></a>
+<div class="contenido-tarjeta">
+<div class="imagen-proyecto">
+<img alt="Captura de Agujetas &amp; Dinero" src="imagenes/sitios-web/agujetasydinero.webp"/>
+</div>
+<div class="sello">
+<img alt="Logo Agujetas &amp; Dinero" src="imagenes/iconos/agujetasydinero.webp"/>
+</div>
+<h2>Agujetas &amp; Dinero</h2>
+<p>Proyecto final del Certificado de Nivel 2 de…</p>
+<p class="tarjeta__tecnologias">HTML · CSS · JavaScript</p><a class="boton-proyecto boton-proyecto--vermas" href="#modal-agujetas">Ver más</a>
+</div>
+</article></div><!-- FIN .tarjetas -->
+<!-- ============================
+     MODALES "VER MÁS"
+     (hermanos de .tarjetas, no hijos)
+============================ -->
+<!-- =========================
+     MODAL RENTACAR
+========================= -->
+<div class="tarjeta__modal" id="modal-rentacar">
+<a aria-label="Cerrar" class="tarjeta__modal-fondo" href="#"></a>
+<div class="tarjeta__modal-caja">
+<a aria-label="Cerrar" class="tarjeta__modal-cerrar" href="#">×</a>
+<div aria-label="Capturas de Rentacar Ciudad Real" class="carrusel" role="group">
+<div class="carrusel__pista"><figure class="carrusel__diapositiva"><img alt="Captura 1 de Rentacar Ciudad Real" src="imagenes/sitios-web/rentacar.webp"/></figure></div>
+</div>
+<h2>Rentacar Ciudad Real</h2>
+<p>Renovación de una web de alquiler de vehículos, desarrollada con WordPress mediante el tema Divi y WPCode para integrar código HTML, CSS y JavaScript. Se reutilizaron estructuras para cada sección de la flota, se optimizaron los formatos de imagen y se incorporaron mejoras de accesibilidad y SEO.</p>
+<a class="boton-proyecto" href="#">Visitar proyecto</a>
+</div>
+</div>
+<!-- =========================
+     MODAL CARPA Y FIESTA
+========================= -->
+<div class="tarjeta__modal" id="modal-carpa">
+<a aria-label="Cerrar" class="tarjeta__modal-fondo" href="#"></a>
+<div class="tarjeta__modal-caja">
+<a aria-label="Cerrar" class="tarjeta__modal-cerrar" href="#">×</a>
+<div aria-label="Capturas de Carpa y Fiesta" class="carrusel" role="group">
+<div class="carrusel__pista"><figure class="carrusel__diapositiva"><img alt="Captura 1 de Carpa y Fiesta" src="imagenes/sitios-web/carpayfiesta.webp"/></figure></div>
+</div>
+<h2>Carpa y Fiesta</h2>
+<p>Renovación completa de la web, con un nuevo flujo y diseño respecto al anterior catálogo informativo de productos. Incorpora un sistema de entradas para publicar novedades y noticias de la empresa. Desarrollada sobre el tema Divi, aunque la mayor parte se resolvió con código propio para lograr un catálogo fluido y adecuado a las necesidades del negocio.</p>
+<a class="boton-proyecto" href="#">Visitar proyecto</a>
+</div>
+</div>
+<!-- =========================
+     MODAL GRUPO TORREBLANCA
+========================= -->
+<div class="tarjeta__modal" id="modal-torreblanca">
+<a aria-label="Cerrar" class="tarjeta__modal-fondo" href="#"></a>
+<div class="tarjeta__modal-caja">
+<a aria-label="Cerrar" class="tarjeta__modal-cerrar" href="#">×</a>
+<div aria-label="Capturas de Grupo Torreblanca" class="carrusel" role="group">
+<div class="carrusel__pista"><figure class="carrusel__diapositiva"><img alt="Captura 1 de Grupo Torreblanca" src="imagenes/sitios-web/grupotorreblanca.webp"/></figure></div>
+</div>
+<h2>Grupo Torreblanca</h2>
+<p>Rediseño de la web corporativa, estructurada en secciones claras y sencillas para el usuario, con especial atención a la accesibilidad. Incluye un blog gestionado de forma distinta al de Carpa y Fiesta, pero igualmente intuitivo para los usuarios encargados de administrar el contenido. Desarrollada en WordPress con el tema Elementor combinado con código propio.</p>
+<a class="boton-proyecto" href="#">Visitar proyecto</a>
+</div>
+</div>
+<!-- =========================
+     MODAL POVEDA Y NOGUERA
+========================= -->
+<div class="tarjeta__modal" id="modal-poveda">
+<a aria-label="Cerrar" class="tarjeta__modal-fondo" href="#"></a>
+<div class="tarjeta__modal-caja">
+<a aria-label="Cerrar" class="tarjeta__modal-cerrar" href="#">×</a>
+<div aria-label="Capturas de Poveda &amp; Noguera" class="carrusel" role="group">
+<div class="carrusel__pista"><figure class="carrusel__diapositiva"><img alt="Captura 1 de Poveda &amp; Noguera" src="imagenes/sitios-web/povedaynoguera.webp"/></figure></div>
+</div>
+<h2>Poveda &amp; Noguera</h2>
+<p>Página corporativa elegante y sencilla para una asesoría empresarial, aplicando la idea de que las mejores soluciones son las más simples. El diseño se realizó junto a la gerencia de Poveda &amp; Noguera e incluye un blog para publicar noticias del sector. Desarrollada en WordPress combinando elementos del tema Astra con código propio. También se gestionó la migración de HTTP a HTTPS a través del panel de control de IONOS y FTP con FileZilla.</p>
+<a class="boton-proyecto" href="#">Visitar proyecto</a>
+</div>
+</div>
+<!-- =========================
+     MODAL AGUJETAS Y DINERO
+========================= -->
+<div class="tarjeta__modal" id="modal-agujetas">
+<a aria-label="Cerrar" class="tarjeta__modal-fondo" href="#"></a>
+<div class="tarjeta__modal-caja">
+<a aria-label="Cerrar" class="tarjeta__modal-cerrar" href="#">×</a>
+<div aria-label="Capturas de Agujetas &amp; Dinero" class="carrusel" role="group">
+<div class="carrusel__pista"><figure class="carrusel__diapositiva"><img alt="Captura 1 de Agujetas &amp; Dinero" src="imagenes/sitios-web/agujetasydinero.webp"/></figure></div>
+</div>
+<h2>Agujetas &amp; Dinero</h2>
+<p>Proyecto final del Certificado de Nivel 2 de Diseño y Desarrollo Web, con un enfoque desenfadado sobre el mundo de la musculación y el deporte, un sector que también practico. Desarrollado íntegramente con HTML, CSS y JavaScript, y publicado a través de GitHub. Incluye efecto parallax, integración de métodos de pago y otros elementos que sirvieron como aprendizaje práctico.</p>
+<a class="boton-proyecto" href="#">Visitar proyecto</a>
+</div>
+</div>
+<!-- =========================
+     MODAL SUMINISTROS GARVAL
+========================= -->
+<div class="tarjeta__modal" id="modal-garval">
+<a aria-label="Cerrar" class="tarjeta__modal-fondo" href="#"></a>
+<div class="tarjeta__modal-caja">
+<a aria-label="Cerrar" class="tarjeta__modal-cerrar" href="#">×</a>
+<div aria-label="Capturas de Suministros Garval" class="carrusel" role="group">
+<div class="carrusel__pista"><figure class="carrusel__diapositiva"><img alt="Captura 1 de Suministros Garval" src="imagenes/sitios-web/suministros-garval.webp"/></figure></div>
+</div>
+<h2>Suministros Garval</h2>
+<p>En este proyecto no hubo rediseño completo ni desarrollo desde cero, sino gestión de contenido sobre una tienda online ya existente. Mediante Hostinger Builders se verificó el correcto funcionamiento de la pasarela de pagos, se añadieron nuevos productos y categorías, y se incorporaron herramientas de accesibilidad, un aspecto que estaba poco desarrollado en la web original.</p>
+<a class="boton-proyecto" href="#">Visitar proyecto</a>
+</div>
+</div>
+<div class="seccion-nav seccion-nav--siguiente"><button aria-label="Pasar a la siguiente sección" class="seccion-nav__boton" data-tooltip="Pasar a la siguiente sección" data-destino="educacion" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-down"></i></button></div></section>
+<!-- ============ SECCIÓN: EDUCACION ============ -->
+<div class="educacion-container seccion-con-navegacion" id="educacion"><div class="seccion-nav seccion-nav--anterior"><button aria-label="Pasar a la sección anterior" class="seccion-nav__boton" data-tooltip="Pasar a la sección anterior" data-destino="portfolio" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-up"></i></button></div>
+<h1 class="educacion-titulo">FORMACIÓN</h1>
+<div class="camino">
+<div class="hito">
+<div class="hito__fecha">2023 — Actualidad</div>
+<div class="hito__tarjeta">
+<h2 class="hito__titulo">Grado Superior en Desarrollo de Aplicaciones Web</h2>
+<p class="hito__centro">IES Maestre de Calatrava</p>
+<p class="hito__descripcion">Grado Superior que estoy finalizando, centrado en desarrollo web del lado cliente y servidor. Es la base principal de mi formación actual como desarrollador.</p>
+</div>
+</div><div class="hito"><div class="hito__fecha">2026 — Actualidad</div><div class="hito__tarjeta"><h2 class="hito__titulo">Certificado profesional IFCD0210 — Desarrollo de aplicaciones con tecnologías web</h2><p class="hito__centro">Nivel 3 · Aula virtual</p><p class="hito__descripcion">Formación profesional orientada al desarrollo web, complementaria a DAW, con contenidos de cliente, servidor y publicación de aplicaciones web.</p></div></div>
+<div class="hito">
+<div class="hito__fecha">2025</div>
+<div class="hito__tarjeta">
+<h2 class="hito__titulo">Certificado de Profesionalidad — Diseño de Páginas Web Nivel 2</h2>
+<p class="hito__centro">Edukate — Grupo AKD</p>
+<p class="hito__descripcion">
+                    Formación especializada que reforzó lo aprendido en
+                    el grado, centrada en el diseño y maquetación de
+                    páginas web.
+                </p>
+</div>
+</div>
+<div class="hito">
+<div class="hito__fecha">2021 — 2023</div>
+<div class="hito__tarjeta">
+<h2 class="hito__titulo">Grado Medio en Gestión Administrativa</h2>
+<p class="hito__centro">IES Maestre de Calatrava</p>
+<p class="hito__descripcion">
+                    El primer tramo del camino: disciplina, organización
+                    y las bases que, sin saberlo entonces, acabarían
+                    sirviendo también para gestionar proyectos web.
+                </p>
+</div>
+</div>
+</div>
+<div class="seccion-nav seccion-nav--siguiente"><button aria-label="Pasar a la siguiente sección" class="seccion-nav__boton" data-tooltip="Pasar a la siguiente sección" data-destino="skills" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-down"></i></button></div></div>
+<!-- ============ SECCIÓN: SKILLS ============ -->
+<section aria-labelledby="titulo-habilidades" class="habilidades seccion-con-navegacion" id="skills"><div class="seccion-nav seccion-nav--anterior"><button aria-label="Pasar a la sección anterior" class="seccion-nav__boton" data-tooltip="Pasar a la sección anterior" data-destino="educacion" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-up"></i></button></div>
+<header class="habilidades__header">
+<h1 id="titulo-habilidades">
+            Libro de habilidades
+        </h1>
+<p>
+            Conocimientos adquiridos durante mi camino como desarrollador.
+        </p>
+</header>
+<div class="habilidades__lista">
+<article class="habilidad habilidad--html">
+<div class="habilidad__icono">
+<i class="fa-brands fa-html5"></i>
+</div>
+<div class="habilidad__contenido">
+<h2>HTML5</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema"></span>
+</div>
+<strong>Avanzado</strong>
+<p>Creación de estructuras web semánticas.</p>
+</div>
+</article>
+<article class="habilidad habilidad--css">
+<div class="habilidad__icono">
+<i class="fa-brands fa-css3-alt"></i>
+</div>
+<div class="habilidad__contenido">
+<h2>CSS3</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema"></span>
+</div>
+<strong>Avanzado</strong>
+<p>Diseño responsive, animaciones y composición visual.</p>
+</div>
+</article>
+<article class="habilidad habilidad--js">
+<div class="habilidad__icono">
+<i class="fa-brands fa-js"></i>
+</div>
+<div class="habilidad__contenido">
+<h2>JavaScript</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+</div>
+<strong>Básico</strong>
+<p>Lógica, interacción y desarrollo dinámico.</p>
+</div>
+</article>
+<article class="habilidad habilidad--php">
+<div class="habilidad__icono">
+<i class="fa-brands fa-php"></i>
+</div>
+<div class="habilidad__contenido">
+<h2>PHP</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+</div>
+<strong>Básico</strong>
+<p>Desarrollo backend y gestión de aplicaciones.</p>
+</div>
+</article>
+<article class="habilidad habilidad--wordpress">
+<div class="habilidad__icono">
+<i class="fa-brands fa-wordpress"></i>
+</div>
+<div class="habilidad__contenido">
+<h2>WordPress</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+</div>
+<strong>Avanzado</strong>
+<p>Creación y gestión de sitios web con CMS.</p>
+</div>
+</article>
+<article class="habilidad habilidad--github">
+<div class="habilidad__icono">
+<i class="fa-brands fa-github"></i>
+</div>
+<div class="habilidad__contenido">
+<h2>GitHub</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+</div>
+<strong>Intermedio</strong>
+<p>Control de versiones y trabajo colaborativo.</p>
+</div>
+</article>
+<article class="habilidad habilidad--mongodb">
+<div class="habilidad__icono">
+<svg aria-hidden="true" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 0c-.5 3-1.5 5-3.2 7.3C6.6 10 5.6 13 6 16.4c.3 2.8 1.8 5 4.3 6.6.3-1 .5-2.3.5-3.8V24l.6-.1c.2-1.6.2-3.1 0-4.6 2.5-1.6 4-3.9 4.3-6.7.4-3.4-.6-6.4-2.8-9.1C12.6 2.6 12.3 1.4 12 0z"></path>
+</svg>
+</div>
+<div class="habilidad__contenido">
+<h2>MongoDB</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+</div>
+<strong>Básico</strong>
+<p>Bases de datos NoSQL orientadas a documentos.</p>
+</div>
+</article>
+<article class="habilidad habilidad--angular">
+<div class="habilidad__icono">
+<i class="fa-brands fa-angular"></i>
+</div>
+<div class="habilidad__contenido">
+<h2>Angular</h2>
+<div class="habilidad__nivel">
+<span class="gema activa"></span>
+<span class="gema activa"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+<span class="gema"></span>
+</div>
+<strong>Básico</strong>
+<p>Framework para aplicaciones web dinámicas.</p>
+</div>
+</article>
+</div>
+<div class="seccion-nav seccion-nav--siguiente"><button aria-label="Pasar a la siguiente sección" class="seccion-nav__boton" data-tooltip="Pasar a la siguiente sección" data-destino="hobbies" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-down"></i></button></div></section>
+<!-- ============ SECCIÓN: HOBBIES ============ -->
+<section class="jj-hobbies seccion-con-navegacion" id="hobbies"><div class="seccion-nav seccion-nav--anterior"><button aria-label="Pasar a la sección anterior" class="seccion-nav__boton" data-tooltip="Pasar a la sección anterior" data-destino="skills" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-up"></i></button></div>
+<header class="seccion-cabecera-normal"><h1 class="titulo-seccion-visible">HOBBIES</h1></header>
+<article class="jj-hobby jj-hobby--1" id="hobby-1">
+<div class="jj-hobby__overlay"></div>
+<div class="jj-hobby__content">
+<span class="jj-hobby__label">01 / Hobbies</span>
+<h2>Películas</h2>
+<p>
+        Ver películas en cualquier hueco podría considerarlo mi hobby principal.
+        Me puedo ver cualquier película de cualquier género y tiempo.
+      </p>
+</div>
+</article>
+<article class="jj-hobby jj-hobby--2 jj-hobby--right" id="hobby-2">
+<div class="jj-hobby__overlay"></div>
+<div class="jj-hobby__content">
+<span class="jj-hobby__label">02 / Hobbies</span>
+<h2>Videojuegos</h2>
+<p>
+        Me acompañan desde pequeño y etapa de mi vida. Hay ocasiones que buscas adentrarte en una historia compleja donde perderte por horas, otras buscas sentir que ejercitas la mente con cartas y/o estrategia por turnos, y en muchas otras solo buscas pasar un rato de ocio con amig@s.
+      </p>
+</div>
+</article>
+<article class="jj-hobby jj-hobby--3" id="hobby-3">
+<div class="jj-hobby__overlay"></div>
+<div class="jj-hobby__content">
+<span class="jj-hobby__label">03 / Hobbies</span>
+<h2>Lectura</h2>
+<p>
+        La literatura de fantasia medieval es la que me incita a leer, en especial el grimdark. Si busco algo más ligero y que sepa que podré terminarlo en poco tiempo "tiro" de comics.
+      </p>
+</div>
+</article>
+<article class="jj-hobby jj-hobby--4 jj-hobby--right" id="hobby-4">
+<div class="jj-hobby__overlay"></div>
+<div class="jj-hobby__content">
+<span class="jj-hobby__label">04 / Hobbies</span>
+<h2>Deporte</h2>
+<p>
+        Me gusta el deporte, tanto verlo como practicarlo, aunque siempre los separo. Baloncesto y fútbol, sobre todo el primero, me divierte mucho verlo. Tenis, gimnasio y una agradable caminata es lo que practico, depende del clima y de mis lesiones.
+      </p>
+</div>
+</article>
+<article class="jj-hobby jj-hobby--5" id="hobby-5">
+<div class="jj-hobby__overlay"></div>
+<div class="jj-hobby__content">
+<span class="jj-hobby__label">05 / Hobbies</span>
+<h2>Juegos de mesa</h2>
+<p>
+        Hay quien se aburre con la familia cuando hay algun cumpleaños o evento similar. En mi casa nunca ha pasado, y eso es gracias a los juegos de mesa. Que convierten el aburrimiento, en dopamina, diversión y disfrutar aún más de los tuyos.
+      </p>
+</div>
+</article>
+<div class="seccion-nav seccion-nav--siguiente"><button aria-label="Pasar a la siguiente sección" class="seccion-nav__boton" data-tooltip="Pasar a la siguiente sección" data-destino="contacto" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-down"></i></button></div></section>
+<!-- ============ SECCIÓN: CONTACTO ============ -->
+<section aria-labelledby="contacto-titulo" class="contacto-container seccion-con-navegacion" id="contacto"><div class="seccion-nav seccion-nav--anterior"><button aria-label="Pasar a la sección anterior" class="seccion-nav__boton" data-tooltip="Pasar a la sección anterior" data-destino="hobbies" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-up"></i></button></div>
+<header class="seccion-cabecera-normal"><h1 class="titulo-seccion-visible">CONTACTO</h1></header>
+<article class="placa-contacto">
+<header class="placa-contacto__header">
+<h1 class="placa-contacto__titulo" id="contacto-titulo">
+                Juan José Angulo Gómez
+            </h1>
+<p class="placa-contacto__rol">
+                Desarrollador Web
+            </p>
+</header>
+<!-- ESPADA SEPARADORA -->
+<div aria-hidden="true" class="placa-contacto__separador">
+<span class="placa-contacto__espada">
+                ⚔
+            </span>
+</div>
+<!-- DATOS -->
+<dl class="placa-contacto__datos">
+<div class="placa-contacto__fila">
+<dt class="placa-contacto__etiqueta">
+<i aria-hidden="true" class="fa-solid fa-envelope"></i>
+<span>
+                        Correo
+                    </span>
+</dt>
+<dd class="placa-contacto__valor">
+<a href="mailto:j.j.angulo96@gmail.com">
+                        j.j.angulo96@gmail.com
+                    </a>
+</dd>
+</div>
+<div class="placa-contacto__fila">
+<dt class="placa-contacto__etiqueta">
+<i aria-hidden="true" class="fa-solid fa-location-dot"></i>
+<span>
+                        Procedencia
+                    </span>
+</dt>
+<dd class="placa-contacto__valor">
+
+                    Ciudad Real, España
+
+                </dd>
+</div>
+</dl>
+<!-- ESPADA SEPARADORA -->
+<div aria-hidden="true" class="placa-contacto__separador">
+<span class="placa-contacto__espada">
+                ⚔
+            </span>
+</div>
+<!-- CONTACTO / REDES -->
+<nav aria-label="Contacto y redes sociales" class="placa-contacto__redes">
+<a aria-label="WhatsApp" class="placa-contacto__red" href="https://wa.me/34674650571" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-whatsapp"></i>
+<span>
+                    WhatsApp
+                </span>
+</a>
+<a aria-label="LinkedIn" class="placa-contacto__red" href="https://www.linkedin.com/in/tu-perfil" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-linkedin"></i>
+<span>
+                    LinkedIn
+                </span>
+</a>
+<a aria-label="GitHub" class="placa-contacto__red" href="https://github.com/tu-usuario" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-github"></i>
+<span>
+                    GitHub
+                </span>
+</a>
+<a aria-label="Instagram" class="placa-contacto__red" href="https://www.instagram.com/tu-instagram" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fa-brands fa-instagram"></i>
+<span>
+                    Instagram
+                </span>
+</a>
+</nav>
+<details class="creditos-visuales">
+<summary>Uso de IA</summary>
+<p>Las ilustraciones e imágenes artísticas de este portafolio han sido generadas mediante herramientas de inteligencia artificial a partir de indicaciones y dirección creativa propias. El vídeo de inicio parte de una imagen editada por mí mediante Wallpaper Engine y Canva para adaptarla e integrarla en este portafolio.</p>
+</details>
+</article>
+<div class="seccion-nav seccion-nav--siguiente"><button aria-label="Pasar a la siguiente sección" class="seccion-nav__boton" data-tooltip="Pasar a la siguiente sección" data-destino="mapa" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-down"></i></button></div></section>
+<!-- ============ SECCIÓN: MAPA ============ -->
+<div aria-label="Mapa del reino: selecciona una ciudad para navegar a esa sección" class="mapa-container seccion-con-navegacion" id="mapa" role="group"><div class="seccion-nav seccion-nav--anterior"><button aria-label="Pasar a la sección anterior" class="seccion-nav__boton" data-tooltip="Pasar a la sección anterior" data-destino="contacto" type="button"><i aria-hidden="true" class="fa-solid fa-chevron-up"></i></button></div>
+<h1 class="sr-only">Mapa del reino</h1>
+<div class="mapa-lienzo">
+<button class="map-point" id="p-juanjo" type="button"><span aria-hidden="true" class="map-point__flecha">➼</span>Inicio</button>
+<button class="map-point" id="p-sobremi" type="button"><span aria-hidden="true" class="map-point__flecha">➼</span>Sobre mi</button>
+<button class="map-point" id="p-educacion" type="button"><span aria-hidden="true" class="map-point__flecha">➼</span>Formación</button>
+<button class="map-point" id="p-portfolio" type="button"><span aria-hidden="true" class="map-point__flecha">➼</span>Proyectos</button>
+<button class="map-point" id="p-skills" type="button"><span aria-hidden="true" class="map-point__flecha">➼</span>Skills</button>
+<button class="map-point" id="p-hobbies" type="button"><span aria-hidden="true" class="map-point__flecha">➼</span>Hobbies</button>
+<button class="map-point" id="p-contacto" type="button"><span aria-hidden="true" class="map-point__flecha">➼</span>Contacto</button>
+</div>
+<!--
+      Lista independiente solo para móvil (ver mapa.css):
+      en una pantalla estrecha el mapa panorámico deja
+      franjas negras enormes, así que ahí se muestra esto
+      en su lugar en vez de los puntos de arriba.
+    -->
+<div aria-label="Ruta del reino" class="mapa-movil">
+<button class="mapa-movil__parada parada--inicio" data-destino="juanjo" type="button"><span>Inicio</span></button>
+<button class="mapa-movil__parada parada--sobremi" data-destino="sobremi" type="button"><span>Sobre mí</span></button>
+<button class="mapa-movil__parada parada--formacion" data-destino="educacion" type="button"><span>Formación</span></button>
+<button class="mapa-movil__parada parada--proyectos" data-destino="portfolio" type="button"><span>Proyectos</span></button>
+<button class="mapa-movil__parada parada--skills" data-destino="skills" type="button"><span>Skills</span></button>
+<button class="mapa-movil__parada parada--hobbies" data-destino="hobbies" type="button"><span>Hobbies</span></button>
+<button class="mapa-movil__parada parada--contacto" data-destino="contacto" type="button"><span>Contacto</span></button>
+</div>
+</div>
+</div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>

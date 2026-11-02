@@ -1,0 +1,322 @@
+/* ============================================================
+   INICIO — portada con vídeo 16:9
+   Vídeo sin desenfoque; contraste mediante filtros y capas CSS.
+   ============================================================ */
+.juanjo-container {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0 clamp(1rem, 3vw, 2.5rem) clamp(1.25rem, 4vh, 2.5rem);
+  background: #000;
+}
+
+.juanjo-escena {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: #000;
+  pointer-events: none;
+}
+
+.juanjo-escena--video .juanjo-video--principal {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  filter: contrast(1.24) brightness(.72) saturate(.90);
+  opacity: .96;
+  transform: none;
+  pointer-events: none;
+  user-select: none;
+}
+
+/*
+ * Iluminación cinematográfica:
+ * - centro ligeramente más luminoso para conservar al personaje;
+ * - laterales y esquinas sensiblemente más oscuros;
+ * - degradado inferior para separar los controles del vídeo.
+ */
+.juanjo-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 50% 42%,
+      rgba(255, 239, 205, .12) 0%,
+      rgba(255, 239, 205, .06) 24%,
+      rgba(0, 0, 0, .05) 43%,
+      rgba(0, 0, 0, .38) 70%,
+      rgba(0, 0, 0, .72) 100%),
+    linear-gradient(90deg,
+      rgba(0,0,0,.48) 0%,
+      rgba(0,0,0,.16) 18%,
+      rgba(0,0,0,0) 38%,
+      rgba(0,0,0,0) 62%,
+      rgba(0,0,0,.16) 82%,
+      rgba(0,0,0,.48) 100%),
+    linear-gradient(180deg,
+      rgba(0,0,0,.16) 0%,
+      rgba(0,0,0,.02) 42%,
+      rgba(0,0,0,.22) 68%,
+      rgba(0,0,0,.78) 100%);
+}
+
+.juanjo-bocadillo,
+.juanjo-contenido {
+  position: relative;
+  z-index: 2;
+}
+
+/* Bienvenida: centrada arriba, más discreta para no competir con el nombre. */
+.juanjo-bocadillo {
+  position: absolute;
+  top: clamp(1.4rem, 4.5vh, 3.2rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100vw - 3rem);
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  text-align: center;
+}
+
+.juanjo-bienvenida {
+  --typing-steps: 24;
+  width: 24ch;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  color: #fff8e9;
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.02rem, 1.55vw, 1.42rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  text-shadow:
+    0 2px 4px rgba(0,0,0,.98),
+    0 6px 18px rgba(0,0,0,.82);
+  border-right: 2px solid rgba(245, 219, 161, .92);
+  animation:
+    bienvenida-escritura 2.35s steps(var(--typing-steps), end) .35s both,
+    bienvenida-cursor .72s step-end 4 .35s forwards;
+}
+
+@keyframes bienvenida-escritura {
+  from { width: 0; }
+  to { width: 24ch; }
+}
+
+@keyframes bienvenida-cursor {
+  0%, 49% { border-right-color: rgba(245, 219, 161, .92); }
+  50%, 99% { border-right-color: transparent; }
+  100% { border-right-color: transparent; }
+}
+
+/* Bloque inferior deliberadamente ligero para no tapar el vídeo. */
+.juanjo-contenido {
+  width: min(720px, 94%);
+  padding: clamp(.9rem, 2vw, 1.2rem) clamp(1rem, 2.6vw, 1.55rem);
+  text-align: center;
+  color: #f7f2e8;
+  background: linear-gradient(180deg, rgba(7,7,7,.34), rgba(4,4,4,.66));
+  border: 1px solid rgba(234,219,184,.20);
+  box-shadow: 0 14px 34px rgba(0,0,0,.30);
+  backdrop-filter: none;
+}
+
+#h1-nombre {
+  margin: 0 0 .28rem;
+  color: #fffaf0;
+  font-family: "Cinzel", serif;
+  font-size: clamp(1.75rem, 3.45vw, 2.85rem);
+  line-height: 1.1;
+  letter-spacing: .035em;
+  text-shadow:
+    0 2px 4px rgba(0,0,0,.98),
+    0 6px 16px rgba(0,0,0,.8);
+}
+
+.juanjo-subtitulo {
+  margin: 0 0 .9rem;
+  color: #eadfc8;
+  font-size: clamp(.92rem, 1.5vw, 1.08rem);
+  font-weight: 800;
+  line-height: 1.4;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0,0,0,.95);
+}
+
+.juanjo-acciones {
+  display: flex;
+  justify-content: center;
+  gap: .7rem;
+  flex-wrap: wrap;
+}
+
+.btn-cv,
+.btn-explorar {
+  min-width: 148px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .72rem 1rem;
+  border: 1px solid rgba(228,211,174,.52);
+  border-radius: 2px;
+  font-family: "Cinzel", serif;
+  font-size: .9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: .035em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, color .16s ease, transform .16s ease;
+}
+
+.btn-cv {
+  color: #fff7e7;
+  background: #681613;
+}
+
+.btn-explorar {
+  color: #f4ead5;
+  background: rgba(18,18,18,.94);
+}
+
+.btn-cv:hover,
+.btn-cv:focus-visible {
+  color: #fff;
+  background: #861e19;
+  border-color: #f0c4a3;
+  transform: translateY(-1px);
+}
+
+.btn-explorar:hover,
+.btn-explorar:focus-visible {
+  color: #fff;
+  background: #30281f;
+  border-color: #ead29b;
+  transform: translateY(-1px);
+}
+
+.btn-cv:focus-visible,
+.btn-explorar:focus-visible,
+.juanjo-scroll:focus-visible {
+  outline: 3px solid #f1d58f;
+  outline-offset: 4px;
+}
+
+.juanjo-scroll {
+  width: 44px;
+  height: 44px;
+  margin: .7rem auto 0;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #f3e7ce;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+.juanjo-scroll:hover { color: #fff; }
+
+.juanjo-capa,
+.juanjo-flash,
+.juanjo-particulas,
+.juanjo-bruma {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .juanjo-escena--video .juanjo-video--principal { object-position: 50% center; }
+  .juanjo-bocadillo {
+    top: clamp(1.25rem, 4vh, 2.4rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .juanjo-contenido { width: min(680px, 96%); }
+}
+
+@media (max-width: 600px) {
+  .juanjo-container {
+    padding-inline: .75rem;
+    padding-bottom: 1rem;
+  }
+
+  .juanjo-bocadillo {
+    top: 3.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: calc(100vw - 2rem);
+  }
+
+  .juanjo-bienvenida {
+    font-size: clamp(.92rem, 4.2vw, 1.14rem);
+    letter-spacing: .025em;
+  }
+
+  .juanjo-contenido {
+    width: 100%;
+    padding: .85rem .8rem .75rem;
+    background: rgba(5,5,5,.76);
+  }
+
+  #h1-nombre {
+    font-size: clamp(1.45rem, 7vw, 1.9rem);
+  }
+
+  .juanjo-subtitulo {
+    font-size: .83rem;
+    letter-spacing: .13em;
+  }
+
+  .juanjo-acciones { gap: .5rem; }
+
+  .btn-cv,
+  .btn-explorar {
+    flex: 1 1 140px;
+    min-width: 0;
+    font-size: .84rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .juanjo-bienvenida {
+    width: auto;
+    max-width: 100%;
+    border-right: 0;
+    animation: none;
+  }
+
+  .btn-cv,
+  .btn-explorar { transition: none; }
+}
+
+@media (prefers-contrast: more) {
+  .juanjo-contenido {
+    background: #000;
+    border-color: #fff;
+  }
+
+  .juanjo-bienvenida,
+  .juanjo-subtitulo,
+  #h1-nombre { color: #fff; }
+}
